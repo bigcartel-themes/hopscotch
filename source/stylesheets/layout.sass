@@ -1,0 +1,90 @@
+@import 'variables'
+
+*
+  box-sizing: border-box
+  
+body
+  +flexbox
+  +flex-direction(column)
+  background-color: $background-color
+  color: $text-color
+  font-family: $primary-font
+  font-size: 20px
+  min-height: 100vh
+
+a, a:visited
+  color: $text-color
+  text-decoration: none
+  
+.wrapper
+  margin: 0 auto
+  max-width: 1200px
+  width: 100%
+
+.header
+  +flexbox
+  +align-items(center)
+  +justify-content(space-between)
+  font-size: 15px
+  height: 100px
+  padding: 0 50px
+  position: relative
+  width: 100%
+  
+  @media screen and (max-width: $break-small)
+    display: block
+    
+    .header-store-link
+      float: left
+      
+    .header-cart
+      float: right
+      
+    .header-pages
+      clear: both
+      width: 100%
+  
+.header-page-navigation
+  list-style: none
+  margin: 0
+  padding: 0
+  
+  .header-page-link
+    display: inline-block
+    
+    a
+      display: block
+  
+.content
+  +flex(1)
+  
+.footer
+  font-size: 15px
+  padding: 100px 0
+  
+.footer-wrapper
+  +flexbox
+  +align-items(flex-start)
+  max-width: 960px
+  
+  @media screen and (max-width: $break-small)
+    +flex-direction(column)
+    text-align: center
+  
+.footer-content-block
+  margin-right: 140px
+  
+  @media screen and (max-width: $break-small)
+    margin: 0 auto
+
+.footer-link-list
+  list-style: none
+  margin: 0
+  padding: 0
+  
+.footer-credit
+  margin-left: auto
+  margin-right: 0
+  
+  @media screen and (max-width: $break-small)
+    margin: 0 auto

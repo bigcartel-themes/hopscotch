@@ -1,0 +1,23 @@
+@import 'flexbox'
+
+$theme-color: #{"{{ theme.theme_color }}"}
+$background-color: #{"{{ theme.background_color }}"}
+$text-color: #{"{{ theme.text_color }}"}
+$secondary-text-color: #{"{{ theme.secondary_text_color }}"}
+$accent-background-color: #{"{{ theme.accent_background_color }}"}
+$error-color:  #{"{{ theme.error_color }}"}
+
+$primary-font: #{"{{ theme.primary_font }}"}
+
+$break-large: 1200px
+$break-medium: 1023px
+$break-small: 767px
+$break-extra-small: 640px
+
+@mixin transition($transition...)
+  -webkit-transition: #{$transition}
+  transition: #{$transition}
+  
+@mixin transform($str...)
+  -webkit-transform: $str
+  transform: $str
