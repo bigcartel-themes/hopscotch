@@ -1,0 +1,8 @@
+// Use this file to test your theme with different stores and customization variations.
+// Learn more at: // https://github.com/bigcartel/dugway#testing-your-theme
+// DON'T CHECK THIS FILE INTO SOURCE CONTROL
+{ 
+  "store": { 
+    "subdomain": "nickswoodshop"
+  }
+}
