@@ -13,16 +13,13 @@
 </div>
 
 <div class="product-page-details">
-  
   <div class="product-price">
     {{ product.default_price | money_with_sign }}
     {% if product_status != blank %}
       &mdash; <span class="product-status">{{ product_status }}</span>
     {% endif %}
   </div>
-
   <h1 class="page-title product-name">{{ product.name }}</h1>
-
 	<div class="product-details">
     {% if product.status == 'active' %}
       <form action="/cart" class="product-form" method="post">
