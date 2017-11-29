@@ -1,0 +1,142 @@
+@import 'variables'
+
+.primary-image-container
+  margin-bottom: 80px
+  max-width: 1200px
+  width: 100%
+  
+  @media screen and (max-width: $break-small)
+    margin-bottom: 46px
+  
+  .primary-image
+    display: block
+    width: 100%
+    
+.product-page-details
+  margin: 0 auto
+  max-width: 960px
+  
+  .product-price
+    font-size: 30px
+    letter-spacing: 3px
+    line-height: 50px
+    
+    @media screen and (max-width: $break-small)
+      font-size: 18px
+      letter-spacing: 2px
+      line-height: 30px
+  
+  h1.product-name
+    line-height: 75px
+    margin-top: 20px
+    
+    @media screen and (max-width: $break-small)
+      line-height: 30px
+      margin-top: 10px
+    
+  .product-status
+    color: $theme-color
+    text-transform: uppercase
+
+.product-details
+  +flexbox
+  +justify-content(flex-start)
+  +flex-direction(row)
+  
+  @media screen and (max-width: $break-small)
+    +flex-direction(column)
+  
+.product-description
+  order: 1
+  line-height: 30px
+  padding-right: 70px
+  
+  @media screen and (max-width: $break-medium)
+    font-size: 18px
+  
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+    line-height: 21px
+    order: 2
+    padding-right: 0
+    
+  a
+    +all-transitions
+    color: $secondary-text-color
+    
+    &:hover
+      color: $text-color
+  
+  img, iframe
+    display: block
+    max-width: 100%
+
+.product-form
+  margin-left: auto
+  max-width: 300px
+  order: 2
+  width: 100%
+  
+  @media screen and (max-width: $break-small)
+    margin: 0
+    max-width: 100%
+    order: 1
+  
+.product-quantity
+  display: none
+  
+.product-option-selection 
+  margin-bottom: 20px
+
+select#option
+  display: none
+  
+.option-name
+  margin-right: 8px
+  
+.option-price
+  margin-left: 8px
+  
+.add-to-cart-button
+  width: 100%
+  
+  @media screen and (max-width: $break-small)
+    margin-bottom: 40px
+  
+.secondary-product-images
+  margin-top: 100px
+  
+  .secondary-product-image
+    +flexbox
+    +flex(1 0 75%)
+    +justify-content(flex-end)
+    +transition(opacity 1s cubic-bezier(.39,.575,.565,1),transform .5s cubic-bezier(.39,.575,.565,1))
+    max-width: 750px
+    opacity: 0
+    padding: 2% 15px 2% 15px
+    position: relative
+    width: 100%
+    
+    img
+      height: 100%
+    
+    &.visible
+      transform: translate(0,-20px)
+      opacity: 1
+      visibility: visible
+  
+    &:nth-child(1)
+      margin-left: auto
+  
+    &:nth-child(2)
+      +flex(1 0 50%)
+      
+    &:nth-child(3)
+      +flex(1 0 50%)
+    
+    &:nth-child(4)
+      margin-left: 30px
+      
+      @media screen and (max-width: $break-small)
+        right: 30px
+      

@@ -1,60 +1,339 @@
 @import 'variables'
 
+.products-page-header
+  +flexbox
+  +justify-content(flex-start)
+  margin: 80px auto 0
+  max-width: 960px
+  
+  @media screen and (max-width: $break-small)
+    +flex-direction(column)
+    margin-top: 0
+  
+  h1.products-title
+    margin: 0 0 120px 0
+    max-width: calc(100% - 360px)
+    padding: 0
+    
+    @media screen and (max-width: $break-small)
+      display: none
+      margin-bottom: 60px
+    
+.dropdown-navigation
+  font-size: 15px
+  height: 75px
+  margin: 0 0 0 auto
+  position: relative
+  text-align: center
+  width: auto
+  
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+    height: 50px
+    width: 100%
+  
+.dropdown-navigation-title
+  +all-transitions
+  +flexbox
+  +justify-content(center)
+  +align-items(center)
+  background: $background-color
+  border: 4px solid $text-color
+  cursor: pointer
+  height: 75px
+  padding: 0 50px
+  text-transform: uppercase
+  
+  &:hover
+    background: $text-color
+    color: $background-color
+    
+    .down-arrow
+      fill: $background-color
+  
+  .dropdown-title
+    display: none
+    
+    @media screen and (max-width: $break-small)
+      display: inline-block
+      
+  .dropdown-select-title
+    @media screen and (max-width: $break-small)
+      display: none
+  
+  @media screen and (max-width: $break-small)
+    height: 50px
+  
+  .down-arrow
+    fill: $text-color
+    margin-left: 10px
+
+.dropdown-navigation-list
+  +transition(all .2s cubic-bezier(.39,.575,.565,1))
+  background: $background-color
+  border: 4px solid $text-color
+  list-style: none
+  margin: 0
+  opacity: 0
+  padding: 0
+  position: absolute
+  top: calc(100% - 4px)
+  width: 100%
+  visibility: hidden
+  z-index: 2
+  
+  li
+    border-bottom: 4px solid $text-color
+    
+    a, span.product-option
+      +flexbox
+      +justify-content(center)
+      +align-items(center)
+      cursor: pointer
+      height: 67px
+      line-height: 20px
+      padding: 0 30px
+      
+      @media screen and (max-width: $break-small)
+        height: 42px
+      
+      &:hover, &:active
+        background: $text-color
+        color: $background-color
+    
+  &:last-child
+    border-bottom: 0px
+    
+  &.visible
+    opacity: 1
+    visibility: visible
+
 .product-list
   +flexbox
   +flex-direction(row)
   +flex-wrap(wrap)
   max-width: 1360px
-  padding: 0
+  padding: 0 100px
   position: relative
   text-transform: uppercase
   width: 100%
   
+  @media screen and (max-width: $break-medium)
+    padding: 0 40px
+  
+  @media screen and (max-width: $break-small)
+    +flex-direction(column)
+    padding: 40px 0
+  
 .product-card
+  +flexbox
+  +flex(1 0 50%)
+  +justify-content(flex-end)
   +transition(opacity 1s cubic-bezier(.39,.575,.565,1),transform .5s cubic-bezier(.39,.575,.565,1))
   max-width: 50%
-  padding: 10px
+  opacity: 0
+  padding: 6% 15px calc(30px + 6%) 15px
+  position: relative
   width: 100%
   
+  @media screen and (max-width: $break-medium)
+    +flex(1 0 50%)
+    padding: 8% 10px 100px 10px
+  
+  @media screen and (max-width: $break-small)
+    +flex(1)
+    left: 0 !important
+    padding-bottom: 0
+    max-width: 90%
+    top: 0 !important
+  
+  &:hover .view-details
+    opacity: 1
+    visibility: visible
+    
+  &.visible
+    transform: translate(0,-20px)
+    opacity: 1
+    visibility: visible
+
   &:nth-child(even)
+    +justify-content(flex-start)
     text-align: right
+    
+    .product-image-holder
+      left: 0
+      width: calc(100% - 60px)
+    
+    .product-info
+      +transform(rotate(90deg) translate(0, 0))
+      transform-origin: left top
+      display: inline-block
+      height: 60px
+      left: 100%
+      position: absolute
+      text-align: left
+      top: 0
+      white-space: nowrap
+    
+    @media screen and (max-width: $break-small)
+      margin-left: auto
+      
+  &:nth-child(odd)
+    
+    .product-image-holder
+      left: 60px
+      width: calc(100% - 60px)
+      
+    .product-info
+      +transform(rotate(-90deg) translate(0, 0))
+      transform-origin: left top
+      bottom: -60px
+      display: inline-block
+      height: 60px
+      left: 0
+      position: absolute
+      text-align: left
+      white-space: nowrap
+      
+  &.horizontal
+    
+    .product-image-holder
+      left: 0
+      width: 100%
+    
+    .product-info
+      +transform(none)
+      display: block
+      left: 0
+      bottom: 0
+      position: relative
+      top: 0
+      
+    
+  &:nth-child(8n+1)
+    left: 60px
+    top: -30px
+
+  &:nth-child(8n+2)
+    left: 60px
+    top: 70px
+    
+  &:nth-child(8n+3)
+    left: -60px
+    top: 70px
   
-.product-list-image
-  display: block
-  width: 100%
+  &:nth-child(8n+4)
+    left: -60px
+    top: -30px
+    
+  &:nth-child(8n+5)
+    left: 60px
+    top: -30px
+
+  &:nth-child(8n+6)
+    left: 60px
+    top: 70px
+
+  &:nth-child(8n+7)
+    left: -60px
+    top: 70px
+  
+  &:nth-child(8n+8)
+    left: -60px
+    top: -30px
+    
+  .product-status
+    color: $theme-color
+    margin-left: 5px
+  
+  .product-image-holder
+    position: relative
+    
+  .product-list-image
+    display: block
+    width: 100%
+  
+  .product-name
+    width: 100%
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+.view-details
+  +all-transitions
+  +transform(translateX(-50%) translateY(-50%))
+  background-color: $text-color
+  color: $background-color
+  font-size: 15px
+  left: 50%
+  letter-spacing: 2px
+  line-height: 75px
+  opacity: 0
+  position: absolute
+  text-align: center
+  top: 50%
+  width: 50%
+  visibility: hidden
+  
+  @media screen and (max-width: $break-medium)
+    display: none
   
 a.product-link
   color: $secondary-text-color
   display: block
+  height: auto
   position: relative
+  width: 100%
+
+  @media screen and (max-width: $break-small)
+    top: 0 !important
   
 .product-info
   font-size: 12px
   letter-spacing: 2px
   line-height: 20px
-  
-  
-  
+  padding-top: 7px
+  width: 88%
   
 .pagination-container
   +flexbox
   +align-items(center)
   +justify-content(flex-start)
   font-size: 15px
-  margin-top: 48px
+  margin: 48px auto
+  max-width: 960px
   text-transform: uppercase
+  
+.pagination
+  border: 2px solid $text-color
+  font-size: 0
   
   a:not(.previous):not(.next), .current
     display: none
   
-  .previous, .next
-    background-color: $background-color
-    border: 4px solid $text-color
-    color: $text-color
-    display: inline-block
-    
-    &.disabled
-      opacity: .5
+a.previous + a.next
+  border-left: 0
+
+.previous, .next
+  +appearance(none)
+  background-color: $background-color
+  border-radius: 0
+  border: 2px solid $text-color
+  display: inline-block
+  font-family: $primary-font
+  font-size: 15px
+  letter-spacing: 2px
+  line-height: 67px
+  outline: none
+  padding: 0 65px
+  text-transform: uppercase
+  
+  @media screen and (max-width: $break-small)
+    line-height: 42px
+    padding: 0 20px
+  
+  &.disabled
+    display: none
       
 .pagination-arrow
   display: inline-block
@@ -63,6 +342,9 @@ a.product-link
   position: relative
   top: 2px
   width: 16px
+  
+  @media screen and (max-width: $break-small)
+    margin: 0 !important
   
   &.prev-arrow
     +transform(rotate(90deg))
@@ -73,4 +355,13 @@ a.product-link
     margin-left: 10px
   
 .paginate-info
+  color: $secondary-text-color
+  letter-spacing: 2px
   margin-left: auto
+  
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+  
+.pagination-link-caption
+  @media screen and (max-width: $break-small)
+    display: none

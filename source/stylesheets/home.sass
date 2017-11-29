@@ -1,0 +1,154 @@
+@import 'variables'
+
+.home-welcome
+  margin-bottom: 100px
+  position: relative
+  
+.welcome-image
+  display: block
+  width: 100%
+  
++keyframes(welcome-text)
+  0%
+    opacity: 0
+    +transform(translate3d(0, 20px, 0))
+    +transition(opacity 1s cubic-bezier(.39,.575,.565,1),transform .5s cubic-bezier(.39,.575,.565,1))
+    
+  100%
+    +transform(none)
+    opacity: 1
+
+.welcome-message
+  +flexbox
+  +align-items(center)
+  +animation(welcome-text .5s cubic-bezier(.39,.575,.565,1))
+  bottom: 0
+  left: 0
+  padding: 100px
+  position: relative
+  right: 0
+  top: 0
+  
+  @media screen and (max-width: $break-medium)
+    padding: 50px
+    
+  @media screen and (max-width: $break-small)
+    padding: 20px
+  
+  &.has-welcome-image
+    position: absolute
+    
+    h1.welcome-header
+      color: $background-color
+  
+h1.welcome-header
+  color: $text-color
+  font-size: 4vw
+  margin: 0
+  
+  &:after
+    background-color: $theme-color
+    bottom: -40px
+    content: ""
+    display: block
+    height: 4px
+    left: 0
+    max-width: 80%
+    position: absolute
+    width: 260px
+
+a.shop-now-button
+  position: absolute
+  right: 18%
+  z-index: 4
+  
+  @media screen and (max-width: $break-large)
+    right: 10%
+  
+  @media screen and (max-width: $break-medium)
+    right: 2%
+  
+  @media screen and (max-width: $break-small)
+    display: block
+    position: relative
+    right: auto
+    text-align: center
+    width: 100%
+
+h1.gallery-title
+  text-align: right
+  
+  &:after
+    left: auto
+    right: 0
+    
+.image-gallery
+  +flexbox
+  +flex-direction(row)
+  +flex-wrap(wrap)
+  max-width: 960px
+  margin: 0 auto
+  padding: 30px 50px
+  position: relative
+  text-transform: uppercase
+  width: 100%
+  
+  .gallery-image-container
+    +flexbox
+    +flex(1 0 33%)
+    +justify-content(flex-end)
+    +transition(opacity 1s cubic-bezier(.39,.575,.565,1),transform .5s cubic-bezier(.39,.575,.565,1))
+    max-width: 33%
+    opacity: 0
+    padding: 5% 5px calc(30px + 4%) 5px
+    position: relative
+    width: 100%
+
+    &:nth-child(6n+1)
+      left: -30px
+      top: -30px
+      
+      @media screen and (max-width: $break-medium)
+        left: 0
+        top: 0
+      
+    &:nth-child(6n+2)
+      left: -30px
+      top: 0
+      
+      @media screen and (max-width: $break-medium)
+        left: 0
+        top: 0
+      
+    &:nth-child(6n+3)
+      right: -30px
+      top: -30px
+      
+      @media screen and (max-width: $break-medium)
+        left: -60px
+        top: 0
+      
+    &:nth-child(6n+4)
+      top: 30px
+      
+      @media screen and (max-width: $break-medium)
+        left: -60px
+        top: 0
+      
+    @media screen and (max-width: $break-medium)
+      +flex(1 0 50%)
+      max-width: 50%
+      
+    @media screen and (max-width: $break-small)
+      +flex(1 0 100%)
+      max-width: 100%
+        
+    .gallery-image
+      display: block
+      height: 100%
+      width: 100%
+      
+    &.visible
+      transform: translate(0,-20px)
+      opacity: 1
+      visibility: visible

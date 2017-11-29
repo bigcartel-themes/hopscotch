@@ -5,15 +5,20 @@
 .contact-success-text
 
 .contact-form
-
+  margin: 0 auto
+  max-width: 960px
+  
 .contact-form-block
-  margin-bottom: 20px
+  margin: 0 auto 20px
+  max-width: 660px
+  width: 100%
   
   &.contact-captcha
     margin-bottom: 40px
 
 .contact-label
   color: $secondary-text-color
+  display: block
   font-size: 12px
   margin-bottom: 20px
 
@@ -22,6 +27,12 @@
   
   input
     height: 75px
+    
+    @media screen and (max-width: $break-small)
+      height: 50px
+      
+  textarea
+    height: 200px
     
   input, textarea
     border-color: $secondary-text-color
@@ -34,6 +45,15 @@
 .contact-captcha
 
 .contact-send
+  max-width: 960px
+  text-align: right
+  
+  @media screen and (max-width: $break-small)
+    max-width: 100%
+    text-align: center
+    
+    button
+      width: 100%
 
 #captcha_image
   height: 67px
@@ -41,7 +61,13 @@
   right: 4px
   top: 4px
   
+  @media screen and (max-width: $break-small)
+    height: 42px
+  
 .captcha-instructions
   color: $secondary-text-color
   font-size: 12px
   margin-top: 8px
+  
+.back-to-shop-button
+  display: inline-block

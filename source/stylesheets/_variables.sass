@@ -14,6 +14,9 @@ $break-medium: 1023px
 $break-small: 767px
 $break-extra-small: 640px
 
+@mixin all-transitions
+  +transition(.2s linear)
+
 @mixin transition($transition...)
   -webkit-transition: #{$transition}
   transition: #{$transition}
@@ -21,3 +24,20 @@ $break-extra-small: 640px
 @mixin transform($str...)
   -webkit-transform: $str
   transform: $str
+  
+@mixin appearance($str)
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  
+@mixin keyframes($animation)
+  @-webkit-keyframes #{$animation}
+    @content
+
+  @keyframes #{$animation}
+    @content
+    
+    
+@mixin animation($str...)
+  -webkit-animation: $str
+  animation: $str

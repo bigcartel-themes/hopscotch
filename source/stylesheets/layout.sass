@@ -2,7 +2,7 @@
 
 *
   box-sizing: border-box
-  
+
 body
   +flexbox
   +flex-direction(column)
@@ -11,14 +11,156 @@ body
   font-family: $primary-font
   font-size: 20px
   min-height: 100vh
-
+  
+.accent-background
+  background-color: $accent-background-color
+  height: 45vh
+  max-width: 75% 
+  position: absolute
+  z-index: -1
+  width: 100%
+  
+  @media screen and (max-width: $break-small)
+    height: 30vh
+  
+  &:nth-of-type(1)
+    left: 0
+    top: 0
+    
+  &:nth-child(even)
+    left: 0
+    
+  &:nth-child(odd)
+    right: 0
+    
 a, a:visited
   color: $text-color
   text-decoration: none
+
+button, .button
+  +all-transitions
+  +appearance(none)
+  background-color: $background-color
+  border-radius: 0
+  border: 4px solid $text-color
+  color: $text-color
+  cursor: pointer
+  font-family: $primary-font
+  font-size: 15px
+  letter-spacing: 2px
+  line-height: 67px
+  outline: none
+  padding: 0 65px
+  text-transform: uppercase
+  white-space: nowrap
   
+  &:hover, &:active
+    border: 4px solid $secondary-text-color
+    color: $secondary-text-color
+    
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+    line-height: 42px
+
+input, textarea
+  +appearance(none)
+  border-radius: 0
+  border: 4px solid $text-color
+  font-family: $primary-font
+  font-size: 15px
+  outline: none
+  
+  &:active, &:focus
+    outline: none
+
+h1, h2, h3, h4, h5, h6
+  color: $text-color
+  font-weight: normal
+  margin: 0
+  padding: 0
+  position: relative
+  text-align: left
+  text-transform: uppercase
+
+h1
+  font-size: 50px
+  letter-spacing: 10px
+  
+  @media screen and (max-width: $break-medium)
+    font-size: 40px
+    letter-spacing: 15px
+    line-height: 50px
+  
+  @media screen and (max-width: $break-small)
+    font-size: 25px
+    letter-spacing: 5px
+    line-height: 30px
+  
+  &.page-title
+    margin: 60px auto 120px
+    max-width: 960px
+    
+    @media screen and (max-width: $break-small)
+      margin-bottom: 60px
+      margin-top: 0
+    
+    &:after
+      background-color: $theme-color
+      bottom: -40px
+      content: ""
+      display: block
+      height: 4px
+      left: 0
+      max-width: 80%
+      position: absolute
+      width: 260px
+      
+      @media screen and (max-width: $break-medium)
+        bottom: -15px
+      
+      @media screen and (max-width: $break-small)
+        bottom: -18px
+        max-width: 120px
+        
+  &.maintenance-header
+    margin-left: 0
+
+.maintenance-note
+  font-size: 18px
+  
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+    
+h2
+  font-size: 30px
+  letter-spacing: 3px
+  line-height: 30px
+  
+  @media screen and (max-width: $break-small)
+    font-size: 18px
+    letter-spacing: 2px
+    
+h3
+  font-size: 20px
+  line-height: 30px
+  
+  @media screen and (max-width: $break-medium)
+    font-size: 18px
+    
+.errors
+  border: 4px solid $error-color
+  color: $error-color
+  font-size: 15px
+  line-height: 30px
+  list-style: none
+  margin: 0 0 20px 0
+  padding: 20px
+  text-align: center
+         
 .wrapper
   margin: 0 auto
   max-width: 1200px
+  position: relative
   width: 100%
 
 .header
@@ -26,41 +168,143 @@ a, a:visited
   +align-items(center)
   +justify-content(space-between)
   font-size: 15px
-  height: 100px
+  height: 150px
   padding: 0 50px
   position: relative
   width: 100%
   
-  @media screen and (max-width: $break-small)
+  .store-link
     display: block
-    
-    .header-store-link
-      float: left
-      
-    .header-cart
-      float: right
-      
-    .header-pages
-      clear: both
-      width: 100%
   
+  .store-logo
+    display: block
+    max-height: 75px
+    max-width: 300px
+    
+    @media screen and (max-width: $break-small)
+      max-width: 100%
+  
+  @media screen and (max-width: $break-small)
+    +flex-wrap(wrap)
+    height: auto
+    padding: 40px 20px
+    
+.header-store-link
+  @media screen and (max-width: $break-small)
+    +flex-basis(50%)
+    
+.header-pages
+  order: 2
+  
+  @media screen and (max-width: $break-small)
+    +flex-basis(100%)
+    margin-top: 20px
+    order: 3
+    
 .header-page-navigation
   list-style: none
   margin: 0
-  padding: 0
+  order: 2
+  padding: 0 30px
+  text-align: center
   
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+    padding: 0
+    text-align: left
+    
   .header-page-link
     display: inline-block
+    margin: 0 10px
+    
+    @media screen and (max-width: $break-small)
+      margin: 10px 10px 5px 0 
     
     a
+      color: $secondary-text-color
       display: block
+      padding: 6px 10px
+      position: relative
+      
+      @media screen and (max-width: $break-small)
+        padding: 2px 10px 2px 0
+      
+      &:before
+        +transition(width .25s cubic-bezier(.39,.575,.565,1))
+        background-color: $text-color
+        bottom: -5px
+        content: ""
+        display: block
+        height: 2px
+        left: 10px
+        position: absolute
+        width: 0%
+
+      &:hover, &:active
+        +all-transitions
+        color: $text-color
+          
+        &:before
+          width: calc(100% - 20px)
+          
+          @media screen and (max-width: $break-small)
+            width: 0
+      
+.header-cart
+  order: 3
   
+  a.cart-link
+    color: $secondary-text-color
+    white-space: nowrap
+    
+    &:hover, &:active
+      +all-transitions
+      color: $text-color
+  
+  @media screen and (max-width: $break-small)
+    +flex-basis(50%)
+    font-size: 13px
+    order: 2
+    text-align: right
+    
 .content
-  +flex(1)
+  +flex(1 0 auto)
+  padding: 0 50px 160px
+  
+  @media screen and (max-width: $break-medium)
+    padding-bottom: 120px
+  
+  @media screen and (max-width: $break-small)
+    padding: 0 20px 20px
+    
+.custom-content
+  font-size: 18px
+  line-height: 30px
+  margin: 0 auto
+  max-width: 660px
+  width: 100%
+  
+  img, iframe
+    display: block
+    max-width: 100%
+  
+  a
+    +all-transitions
+    color: $secondary-text-color
+    
+    &:hover
+      color: $text-color
+  
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+    line-height: 21px
   
 .footer
   font-size: 15px
-  padding: 100px 0
+  padding: 100px 50px
+  
+  @media screen and (max-width: $break-small)
+    padding: 20px
   
 .footer-wrapper
   +flexbox
@@ -73,18 +317,84 @@ a, a:visited
   
 .footer-content-block
   margin-right: 140px
+  position: relative
+  
+  &:before
+    background-color: $theme-color
+    content: ""
+    display: block
+    height: 4px
+    left: 0
+    position: absolute
+    top: -20px
+    width: 25px
   
   @media screen and (max-width: $break-small)
-    margin: 0 auto
+    width: 100%
+    
+    &:before
+      display: none
 
+.footer-navigation
+  
+  @media screen and (max-width: $break-small)
+    border: 4px solid $text-color
+    
+    &:first-child
+      border-bottom: 0
+    
 .footer-link-list
   list-style: none
   margin: 0
   padding: 0
   
+  li
+    display: block
+    
+    @media screen and (max-width: $break-small)
+      border-bottom: 4px solid $text-color
+      font-size: 13px
+      text-transform: uppercase
+      
+      &:last-child
+        border-bottom: 0
+    
+    a
+      +all-transitions
+      display: block
+      padding: 12px 0
+      line-height: 20px
+      
+      &:hover
+        color: $secondary-text-color
+      
+  
 .footer-credit
   margin-left: auto
   margin-right: 0
+  text-align: right
+  
+  &:before
+    left: auto
+    right: 0
+  
+  a
+    +all-transitions
+    color: $secondary-text-color
+    font-style: italic
+    white-space: nowrap
+    
+    &:hover
+      color: $text-color
+    
+  .store-name
+    margin: 20px 0 30px
   
   @media screen and (max-width: $break-small)
-    margin: 0 auto
+    margin: 50px auto 0
+    text-align: center
+    
+    &:before
+      +transform(translateX(-50%))
+      display: block
+      left: 50%
