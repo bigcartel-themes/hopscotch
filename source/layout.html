@@ -102,21 +102,5 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}"></script>
     <script src="{{ theme | theme_js_url }}"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function(){
-      	var trigger = new ScrollTrigger({
-      	  toggle: {
-      	    visible: 'visible',
-      	    hidden: 'invisible'
-      	  },
-      	  offset: {
-      	    x: 0,
-      	    y: 60
-      	  },
-      	  addHeight: false,
-      	  once: true
-      	}, document.body, window);
-      });
-    </script>
   </body>
 </html>
