@@ -38,7 +38,7 @@
               <div class="product-price">
                 {{ product.default_price | money_with_sign }}
                 {% if product_status != blank %}
-                  &mdash;<span class="product-status">{{ product_status }}<span>
+                  &mdash;<span class="product-status">{{ product_status }}</span>
                 {% endif %}
               </div>
               <div class="product-name">{{ product.name }}</div>
