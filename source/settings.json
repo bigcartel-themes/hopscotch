@@ -1,6 +1,6 @@
 {
   "name": "Hopscotch",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "images": [
     {
       "variable": "logo",
@@ -10,8 +10,14 @@
     {
       "variable": "welcome_image",
       "label": "Welcome image",
-      "description": "1200px by 750px images recommended",
-      "default": "welcome-image.png"
+      "description": "1200px by 750px images recommended"
+    }
+  ],
+  "image_sets": [
+    {
+      "variable": "image_gallery",
+      "label": "Home Page Gallery",
+      "description": "Displays image grid on the Home page"
     }
   ],
   "fonts": [
@@ -25,7 +31,7 @@
     {
       "variable": "theme_color",
       "label": "Theme Color",
-      "default": "#00E6B7"
+      "default": "#FD0400"
     },
     {
       "variable": "background_color",
@@ -35,27 +41,22 @@
     {
       "variable": "accent_background_color",
       "label": "Accent Background",
-      "default": "#FAFAFA"
+      "default": "#F9F7F2"
     },
     {
       "variable": "text_color",
-      "label": "Text",
-      "default": "#222222"
+      "label": "Primary Text",
+      "default": "#000000"
     },
     {
       "variable": "secondary_text_color",
       "label": "Secondary Text",
-      "default": "#999999"
-    },
-    {
-      "variable": "accent_text_color",
-      "label": "Accent Text",
-      "default": "#FFFFFF"
+      "default": "#AD985B"
     },
     {
       "variable": "error_color",
       "label": "Errors",
-      "default": "#F54257"
+      "default": "#B36C00"
     }
   ],
   "options": [
@@ -63,8 +64,14 @@
       "variable": "welcome_header",
       "label": "Welcome header",
       "type": "text",
-      "description": "Welcome header for homepage",
-      "default": "2017 Fall Essentials Sale"
+      "description": "Welcome header for homepage"
+    },
+    {
+      "variable": "gallery_title",
+      "label": "Image gallery title",
+      "type": "text",
+      "description": "Title for the Home page image gallery",
+      "default": "Gallery"
     },
     {
       "variable": "featured_products",
@@ -92,52 +99,47 @@
     },
     {
       "variable": "product_thumbnail_caption_display",
-      "label": "Product Thumbnail Caption Display",
+      "label": "Product Thumbnail Text",
       "type": "select",
-      "options": ["Vertical", "Horizonal"],
+      "options": ["Vertical", "Horizontal"],
       "default": "Horizontal",
-      "description": "Determines how product thumbnail captions are displayed"
+      "description": "Determines orientation for product thumbnail text"
     },
     {
       "variable": "twitter_url",
       "label": "Twitter URL",
       "type": "text",
-      "description": "Ex: http://twitter.com/bigcartel",
-      "default": "blah.com"
+      "description": "Ex: http://twitter.com/bigcartel"
     },
     {
       "variable": "facebook_url",
       "label": "Facebook URL",
       "type": "text",
-      "description": "Ex: http://facebook.com/bigcartel",
-      "default": "blah.com"
+      "description": "Ex: http://facebook.com/bigcartel"
     },
     {
       "variable": "tumblr_url",
       "label": "Tumblr URL",
       "type": "text",
-      "description": "Ex: http://bigcartel.tumblr.com",
-      "default": "blah.com"
+      "description": "Ex: http://bigcartel.tumblr.com"
     },
     {
       "variable": "instagram_url",
       "label": "Instagram URL",
       "type": "text",
-      "description": "Ex: http://instagram.com/bigcartel",
-      "default": "blah.com"
+      "description": "Ex: http://instagram.com/bigcartel"
     },
     {
       "variable": "pinterest_url",
       "label": "Pinterest URL",
       "type": "text",
-      "description": "Ex: http://pinterest.com/bigcartel",
-      "default": "blah.com"
+      "description": "Ex: http://pinterest.com/bigcartel"
     }
   ],
   "checkout": {
     "header_image": "{{ logo }}",
-    "header_image_max_width": "600px",
-    "header_image_max_height": "120px",
+    "header_image_max_width": "400px",
+    "header_image_max_height": "60px",
     "title_font": "{{ primary_font }}",
     "title_font_weight": "normal",
     "title_font_size": "22px",
@@ -155,8 +157,8 @@
     "step_inactive_header_color": " {{ text_color }}",
     "step_header_font": "{{ primary_font }}",
     "step_background_color": "{{ background_color }}",
-    "background_color": "{{ background_color }}",
-    "content_header_background_color": "{{ background_color }}",
+    "content_background_color": "{{ accent_background_color }}",
+    "content_header_background_color": "{{ accent_background_color }}",
     "content_header_color": "{{ text_color }}",
     "content_color": "{{ text_color }}",
     "content_header_font_size": "18px",
@@ -178,17 +180,17 @@
     "input_border_radius": "0px",
     "input_border_width": "2px",
     "input_font": "{{ primary_font }}",
-    "accent_background_color": "{{ accent_text_color }}",
-    "button_border_width": "0px",
+    "button_border_width": "4px",
     "button_border_radius": "0px",
     "button_font": "{{ primary_font }}",
-    "button_hover_color": "{{ accent_text_color }}",
-    "accent_background_color": "{{ accent_background_color }}",
-    "button_hover_background_color": "{{ accent_background_color }}",
-    "button_border_color": "{{ accent_background_color }}",
-    "button_hover_border_color": "{{ accent_background_color }}",
-    "button_text_transform": "none",
-    "link_color": "{{ link_color }}",
+    "button_color": "{{ text_color }}",
+    "button_hover_color": "{{ text_color }}",
+    "button_background_color": "{{ background_color }}",
+    "button_hover_background_color": "{{ background_color }}",
+    "button_border_color": "{{ text_color }}",
+    "button_hover_border_color": "{{ text_color }}",
+    "button_text_transform": "uppercase",
+    "link_color": "{{ theme_color }}",
     "link_hover_color": "{{ text_color }}",
     "step_header_color": "{{ text_color }}",
     "step_header_font_size": "18px",
