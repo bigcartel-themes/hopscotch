@@ -1,3 +1,5 @@
+var inPreview = (/\/admin\/design/.test(top.location.pathname));
+
 $('.dropdown-navigation-title').click(function(e) { 
   $('.dropdown-navigation-list').toggleClass('visible');
 });
@@ -28,18 +30,25 @@ function parallax(){
   $('.accent-background').css('top',-(scrolled*0.20)+'px');
 }
 
-document.addEventListener('DOMContentLoaded', function(){
-	var trigger = new ScrollTrigger({
-	  toggle: {
-	    visible: 'visible',
-	    hidden: 'invisible'
-	  },
-	  offset: {
-	    x: 0,
-	    y: 60
-	  },
-	  addHeight: false,
-	  once: true
-	}, document.body, window);
-});
+if (!inPreview) {
+  document.addEventListener('DOMContentLoaded', function(){
+  	var trigger = new ScrollTrigger({
+  	  toggle: {
+  	    visible: 'visible',
+  	    hidden: 'invisible'
+  	  },
+  	  offset: {
+  	    x: 0,
+  	    y: 60
+  	  },
+  	  addHeight: false,
+  	  once: true
+  	}, document.body, window);
+  });
+}
+else { 
+  $('div[data-scroll]').each(function() {
+    $(this).addClass('visible');
+  });
+}
 
