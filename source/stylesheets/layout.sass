@@ -232,7 +232,7 @@ h3
       &:before
         +transition(width .25s cubic-bezier(.39,.575,.565,1))
         background-color: $text-color
-        bottom: -5px
+        bottom: -3px
         content: ""
         display: block
         height: 2px
@@ -254,12 +254,28 @@ h3
   order: 3
   
   a.cart-link
-    color: $secondary-text-color
+    color: $text-color
+    display: block
+    padding: 6px 0
+    position: relative
     white-space: nowrap
+    
+    &:before
+      +transition(width .25s cubic-bezier(.39,.575,.565,1))
+      background-color: $secondary-text-color
+      bottom: -3px
+      content: ""
+      display: block
+      height: 2px
+      position: absolute
+      width: 0%
     
     &:hover, &:active
       +all-transitions
-      color: $text-color
+      color: $secondary-text-color
+      
+      &:before
+        width: 100%
   
   @media screen and (max-width: $break-small)
     +flex-basis(50%)
