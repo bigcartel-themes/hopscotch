@@ -80,7 +80,7 @@ h1.welcome-header
     padding: 0
     
     @media screen and (max-width: $break-small)
-      margin-bottom: 80px
+      margin-bottom: 20px
       max-width: 100%
 
 a.shop-now-button
@@ -90,10 +90,19 @@ a.shop-now-button
   text-align: center
   width: auto
   
+  &.footer-button
+    display: none
+  
   @media screen and (max-width: $break-small)
     font-size: 13px
     height: 50px
     width: 100%
+    
+    &.header-button
+      display: none
+    
+    &.footer-button
+      display: block
 
 h1.gallery-title
   text-align: right

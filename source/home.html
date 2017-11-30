@@ -35,7 +35,7 @@
       <div class="featured-products-holder">
         <h1 class="page-title featured-title">{{ featured_title }}</h1>
       
-        <a class="button shop-now-button" href="/products" title="Shop Now">Shop Now</a>
+        <a class="button shop-now-button header-button" href="/products" title="Shop Now">Shop Now</a>
       </div>
         <div class="home-page-products product-list">
           {% for product in products %}
@@ -58,7 +58,7 @@
                   <div class="product-price">
                     {{ product.default_price | money_with_sign }}
                     {% if product_status != blank %}
-                      <span class="product-status">&mdash; {{ product_status }}<span>
+                      <span class="product-status">&mdash; {{ product_status }}</span>
                     {% endif %}
                   </div>
                   <div class="product-name">{{ product.name }}</div>
@@ -67,6 +67,7 @@
             </div>
           {% endfor %}
         </div>
+        <a class="button shop-now-button footer-button" href="/products" title="Shop Now">Shop Now</a>
     {% else %}
       <div class="empty-products"><p class="no-products-message">No products found.</p></div>
     {% endif %}
