@@ -16,7 +16,6 @@
           <a class="store-link" href="/" title="{{ store.name | escape }}">{{ store.name }}</a>
         {% endif %}
       </div>
-      
       <div class="header-content-block header-pages">
         <ul class="header-page-navigation">
           <li class="header-page-link"><a href="/products" title="Products">Products</a></li>
@@ -26,12 +25,10 @@
           <li class="header-page-link"><a href="/contact" title="Contact">Contact</a></li>
         </ul>
       </div>
-      
       <div class="header-content-block header-cart">
         <a class="cart-link" href="/cart" title="View Cart">Cart / {{ cart.item_count | pluralize: "Item", "Items" }}</a>
       </div>
     </header>
-    
     <div class="content">
       <div class="content-wrapper wrapper">
 
@@ -43,10 +40,8 @@
         {% else %}
           {{ page_content }}
         {% endif %}
-
       </div>
     </div>
-    
     <footer class="footer">
       <div class="footer-wrapper wrapper">
         <div class="footer-content-block footer-navigation footer-page-links">
@@ -58,47 +53,43 @@
             <li><a href="/contact" title="Contact">Contact</a></li>
           </ul>
         </div>
-        
-        
-          {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank or store.website != blank %}
-            <div class="footer-content-block footer-navigation footer-social-links">
-              <ul class="footer-link-list">
-                {% if theme.instagram_url != blank %}
-                  <li><a target="_blank" title="Instagram" href="{{ theme.instagram_url }}">Instagram</a></li>
-                {% endif %}
-                
-                {% if theme.twitter_url != blank %}
-                  <li><a target="_blank" title="Twitter" href="{{ theme.twitter_url }}">Twitter</a></li>
-                {% endif %}
-                
-                {% if theme.facebook_url != blank %}
-                  <li><a target="_blank" title="Facebook" href="{{ theme.facebook_url }}">Facebook</a></li>
-                {% endif %}
-        
-                {% if theme.pinterest_url != blank %}
-                  <li><a target="_blank" title="Pinterest" href="{{ theme.pinterest_url }}">Pinterest</a></li>
-                {% endif %}
-                
-                {% if theme.tumblr_url != blank %}
-                  <li><a target="_blank" title="Tumblr" href="{{ theme.tumblr_url }}">Tumblr</a></li>
-                {% endif %}
-                
-                {% if store.website != blank %}
-                  <li><a href="{{ store.website }}">Back to site</a></li>
-                {% endif %}
-              </ul>
-            </div>
-          {% endif %}
-        
-        
+        {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank or store.website != blank %}
+          <div class="footer-content-block footer-navigation footer-social-links">
+            <ul class="footer-link-list">
+              {% if theme.instagram_url != blank %}
+                <li><a target="_blank" title="Instagram" href="{{ theme.instagram_url }}">Instagram</a></li>
+              {% endif %}
+              
+              {% if theme.twitter_url != blank %}
+                <li><a target="_blank" title="Twitter" href="{{ theme.twitter_url }}">Twitter</a></li>
+              {% endif %}
+              
+              {% if theme.facebook_url != blank %}
+                <li><a target="_blank" title="Facebook" href="{{ theme.facebook_url }}">Facebook</a></li>
+              {% endif %}
+      
+              {% if theme.pinterest_url != blank %}
+                <li><a target="_blank" title="Pinterest" href="{{ theme.pinterest_url }}">Pinterest</a></li>
+              {% endif %}
+              
+              {% if theme.tumblr_url != blank %}
+                <li><a target="_blank" title="Tumblr" href="{{ theme.tumblr_url }}">Tumblr</a></li>
+              {% endif %}
+              
+              {% if store.website != blank %}
+                <li><a href="{{ store.website }}">Back to site</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
         <div class="footer-content-block footer-credit">
           <div class="store-name">{{ store.name }}</div>
           {{ bigcartel_credit }}
         </div>
       </div>
-      
     </footer>
-
+    <div class="accent-background"></div>
+    <div class="accent-background"></div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}"></script>
     <script src="{{ theme | theme_js_url }}"></script>
