@@ -106,6 +106,14 @@
       "description": "Determines orientation for product thumbnail text"
     },
     {
+      "variable": "nav_items",
+      "label": "Navigation items",
+      "type": "select",
+      "options": "0..6",
+      "default": 2,
+      "description": "The number of custom page links show in the header navigation."
+    },
+    {
       "variable": "twitter_url",
       "label": "Twitter URL",
       "type": "text",
