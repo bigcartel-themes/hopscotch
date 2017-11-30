@@ -12,7 +12,7 @@
   0%
     opacity: 0
     +transform(translate3d(0, 20px, 0))
-    +transition(opacity 1s cubic-bezier(.39,.575,.565,1),transform .5s cubic-bezier(.39,.575,.565,1))
+    +transition(opacity 1s cubic-bezier(.25,.1,.25,1),transform .5s cubic-bezier(.25,.1,.25,1))
     
   100%
     +transform(none)
@@ -21,7 +21,7 @@
 .welcome-message
   +flexbox
   +align-items(center)
-  +animation(welcome-text .5s cubic-bezier(.39,.575,.565,1))
+  +animation(welcome-text .5s cubic-bezier(.25,.1,.25,1))
   bottom: 0
   left: 0
   margin: 120px auto 280px
@@ -129,7 +129,7 @@ h1.gallery-title
     +flexbox
     +flex(1 0 33%)
     +justify-content(flex-end)
-    +transition(opacity 1s cubic-bezier(.39,.575,.565,1),transform .5s cubic-bezier(.39,.575,.565,1))
+    +transition(opacity 1s cubic-bezier(.25,.1,.25,1),transform .5s cubic-bezier(.25,.1,.25,1))
     max-width: 33%
     opacity: 0
     padding: 5% 5px calc(30px + 4%) 5px
