@@ -24,55 +24,75 @@
   +animation(welcome-text .5s cubic-bezier(.39,.575,.565,1))
   bottom: 0
   left: 0
-  padding: 100px
+  margin: 120px auto 280px
+  max-width: 960px
   position: relative
   right: 0
   top: 0
   
-  @media screen and (max-width: $break-medium)
-    padding: 50px
-    
   @media screen and (max-width: $break-small)
-    padding: 20px
+    margin: 60px auto
   
   &.has-welcome-image
+    left: 80px
+    margin: 0 auto
     position: absolute
+    right: 80px
+
+    @media screen and (max-width: $break-small)
+      left: 40px
+      right: 40px
     
     h1.welcome-header
       color: $background-color
-  
-h1.welcome-header
-  color: $text-color
-  font-size: 4vw
-  margin: 0
-  
-  &:after
-    background-color: $theme-color
-    bottom: -40px
-    content: ""
-    display: block
-    height: 4px
-    left: 0
-    max-width: 80%
-    position: absolute
-    width: 260px
+      
+      &:after
+        background-color: $theme-color
 
-a.shop-now-button
-  position: absolute
-  right: 18%
-  z-index: 4
-  
-  @media screen and (max-width: $break-large)
-    right: 10%
+h1.welcome-header
+  color: $theme-color
+  font-size: 5vw
+  margin-left: 0
   
   @media screen and (max-width: $break-medium)
-    right: 2%
+    font-size: 6vw
+    line-height: 1.4em
+    
+  @media screen and (max-width: $break-small)
+    font-size: 25px
+
+  &:after
+    background-color: $text-color
+    
+.featured-products-holder
+  +flexbox
+  +justify-content(flex-start)
+  margin: 80px auto 0
+  max-width: 960px
   
   @media screen and (max-width: $break-small)
-    display: block
-    position: relative
-    right: auto
-    text-align: center
+    +flex-direction(column)
+    margin-top: 0
+  
+  h1.featured-title
+    margin: 0 0 120px 0
+    max-width: calc(100% - 360px)
+    padding: 0
+    
+    @media screen and (max-width: $break-small)
+      margin-bottom: 80px
+      max-width: 100%
+
+a.shop-now-button
+  height: 75px
+  margin: 0 0 0 auto
+  position: relative
+  text-align: center
+  width: auto
+  
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+    height: 50px
     width: 100%
 
 h1.gallery-title
@@ -92,6 +112,9 @@ h1.gallery-title
   position: relative
   text-transform: uppercase
   width: 100%
+  
+  @media screen and (max-width: $break-small)
+    padding: 20px 0
   
   .gallery-image-container
     +flexbox
@@ -138,10 +161,21 @@ h1.gallery-title
     @media screen and (max-width: $break-medium)
       +flex(1 0 50%)
       max-width: 50%
+      padding-top: 3%
       
     @media screen and (max-width: $break-small)
       +flex(1 0 100%)
-      max-width: 100%
+      left: auto !important
+      max-width: 100% !important
+      padding: 10px 0
+      right: auto !important
+      top: 0 !important
+      
+      &:nth-child(odd)
+        padding-left: 20px
+        
+      &:nth-child(even)
+        padding-right: 20px
         
     .gallery-image
       display: block

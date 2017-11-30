@@ -13,7 +13,7 @@
     {% endif %}
     <div class="welcome-message {% if theme.welcome_image %}has-welcome-image{% endif %}">
       {% if theme.welcome_header != blank %}
-        <h1 class="welcome-header">{{ theme.welcome_header }}</h1>
+        <h1 class="welcome-header page-title">{{ theme.welcome_header }}</h1>
       {% endif %}
     </div>
   </div>
@@ -23,47 +23,50 @@
   {% paginate products from products.current by theme.featured_products order by theme.featured_order %}
     {% case theme.featured_order %}
     	{% when 'date' %}
-    		{% assign featured_title = 'Newest Products' %}
+    		{% assign featured_title = 'Newest Items' %}
     	{% when 'position' %}
-    		{% assign featured_title = 'Featured Products' %}
+    		{% assign featured_title = 'Featured Items' %}
     	{% when 'sells' %}
     		{% assign featured_title = 'Best Sellers' %}
       {% when 'views' %}
         {% assign featured_title = 'Most Popular' %}
     {% endcase %}
     {% if products != blank %}
-      <h1 class="page-title featured-title">{{ featured_title }}</h1>
-      <a class="button shop-now-button" href="/products" title="Shop Now">Shop Now</a>
-      <div class="home-page-products product-list">
-        {% for product in products %}
-          {% assign product_status = '' %}
-          {% case product.status %}
-          	{% when 'active' %}
-          		{% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
-          	{% when 'sold-out' %}
-          		{% assign product_status = 'Sold out' %}
-          	{% when 'coming-soon' %}
-          		{% assign product_status = 'Coming soon' %}
-          {% endcase %}
-          <div class="{{ theme.product_thumbnail_caption_display | downcase }} product-card {{ product.css_class }}" data-scroll>
-            <a class="product-link" href="{{ product.url }}">
-              <div class="product-image-holder">
-                <img alt="Image of {{ product.name | escape }}" class="product-list-image" src="{{ product.image | product_image_url | constrain: '1000' }}">
-                <div class="view-details">View Details</div>
-              </div>
-              <div class="product-info">
-                <div class="product-price">
-                  {{ product.default_price | money_with_sign }}
-                  {% if product_status != blank %}
-                    <span class="product-status">&mdash; {{ product_status }}<span>
-                  {% endif %}
-                </div>
-                <div class="product-name">{{ product.name }}</div>
-              </div>
-            </a>
-          </div>
-        {% endfor %}
+      <div class="featured-products-holder">
+        <h1 class="page-title featured-title">{{ featured_title }}</h1>
+      
+        <a class="button shop-now-button" href="/products" title="Shop Now">Shop Now</a>
       </div>
+        <div class="home-page-products product-list">
+          {% for product in products %}
+            {% assign product_status = '' %}
+            {% case product.status %}
+            	{% when 'active' %}
+            		{% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+            	{% when 'sold-out' %}
+            		{% assign product_status = 'Sold out' %}
+            	{% when 'coming-soon' %}
+            		{% assign product_status = 'Coming soon' %}
+            {% endcase %}
+            <div class="{{ theme.product_thumbnail_caption_display | downcase }} product-card {{ product.css_class }}" data-scroll>
+              <a class="product-link" href="{{ product.url }}">
+                <div class="product-image-holder">
+                  <img alt="Image of {{ product.name | escape }}" class="product-list-image" src="{{ product.image | product_image_url | constrain: '1000' }}">
+                  <div class="view-details">View Details</div>
+                </div>
+                <div class="product-info">
+                  <div class="product-price">
+                    {{ product.default_price | money_with_sign }}
+                    {% if product_status != blank %}
+                      <span class="product-status">&mdash; {{ product_status }}<span>
+                    {% endif %}
+                  </div>
+                  <div class="product-name">{{ product.name }}</div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
     {% else %}
       <div class="empty-products"><p class="no-products-message">No products found.</p></div>
     {% endif %}
