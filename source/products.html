@@ -36,7 +36,7 @@
             </div>
             <div class="product-info">
               <div class="product-price">
-                {{ product.default_price | money_with_sign }}
+                {{ product.default_price | money: theme.money_format }}
                 {% if product_status != blank %}
                   &mdash;<span class="product-status">{{ product_status }}</span>
                 {% endif %}

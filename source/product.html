@@ -14,7 +14,7 @@
 
 <div class="product-page-details">
   <div class="product-price">
-    {{ product.default_price | money_with_sign }}
+    {{ product.default_price | money: theme.money_format }}
     {% if product_status != blank %}
       &mdash; <span class="product-status">{{ product_status }}</span>
     {% endif %}
@@ -36,7 +36,7 @@
             <ul class="product-option-list dropdown-navigation-list">
               {% for option in product.options_in_stock	 %}
                 <li class="dropdown-link" data-option-id="{{ option.id }}" {% if option.sold_out %} class="disabled"{% endif %}>
-                  <span class="product-option"><span class="option-name">{{ option.name }}</span>{% if option.price != product.default_price %} - <span class="option-price">{{ option.price | money_with_sign }}</span>{% endif %} {% if option.sold_out %}<span class="option-status">(Sold out)</span>{% endif %}</span>
+                  <span class="product-option"><span class="option-name">{{ option.name }}</span>{% if option.price != product.default_price %} - <span class="option-price">{{ option.price | money: theme.money_format }}</span>{% endif %} {% if option.sold_out %}<span class="option-status">(Sold out)</span>{% endif %}</span>
                 </li>
               {% endfor %}
             </ul>
