@@ -30,7 +30,7 @@
           <div class="cart-item-quantity-holder" data-item-id="{{ item.id }}">
             {{ item | item_quantity_input, 'option-quantity', 'option-quantity' }}
           </div>
-          <div class="cart-item-details-price">{{ item.unit_price | money_with_sign }}</div>
+          <div class="cart-item-details-price">{{ item.unit_price | money: theme.money_format }}</div>
           <div class="cart-item-remove"><svg class="cart-remove-icon" width="25" height="25" viewBox="0 0 25 25"><path d="M12.5 25C5.61 25 0 19.39 0 12.5S5.61 0 12.5 0 25 5.61 25 12.5 19.39 25 12.5 25zm0-24C6.16 1 1 6.16 1 12.5S6.16 24 12.5 24 24 18.84 24 12.5 18.84 1 12.5 1zm4.15 16.35L12.5 13.2l-4.15 4.15-.71-.71 4.15-4.15-4.15-4.15.71-.71 4.15 4.15 4.15-4.15.71.71-4.15 4.15 4.15 4.15-.71.71z" fill-rule="nonzero" /></svg></div>
         </li>
       {% endfor %}
@@ -38,7 +38,7 @@
     <div class="cart-footer">
       <a class="button continue-shopping" href="/products" title="Continue Shopping">Continue Shopping</a>
       <button type="submit" name="checkout" title="Checkout" class="button checkout-btn">Checkout</button>
-      <h3 class="cart-subtotal"><span class="cart-subtotal-label">Subtotal:</span> <span class="cart-subtotal-amount">{{ cart.total | money_with_sign }}</span></h3>
+      <h3 class="cart-subtotal"><span class="cart-subtotal-label">Subtotal:</span> <span class="cart-subtotal-amount">{{ cart.total | money: theme.money_format }}</span></h3>
     </div>
   </form>
 {% endif %}
