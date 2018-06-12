@@ -3,17 +3,17 @@
 .home-welcome
   margin-bottom: 100px
   position: relative
-  
+
 .welcome-image
   display: block
   width: 100%
-  
+
 +keyframes(welcome-text)
   0%
     opacity: 0
     +transform(translate3d(0, 20px, 0))
     +transition(opacity 1s cubic-bezier(.25,.1,.25,1),transform .5s cubic-bezier(.25,.1,.25,1))
-    
+
   100%
     +transform(none)
     opacity: 1
@@ -29,10 +29,10 @@
   position: relative
   right: 0
   top: 0
-  
+
   @media screen and (max-width: $break-small)
     margin: 60px auto
-  
+
   &.has-welcome-image
     left: 80px
     margin: 0 auto
@@ -42,10 +42,10 @@
     @media screen and (max-width: $break-small)
       left: 40px
       right: 40px
-    
+
     h1.welcome-header
       color: $background-color
-      
+
       &:after
         background-color: $theme-color
 
@@ -53,32 +53,32 @@ h1.welcome-header
   color: $theme-color
   font-size: 5vw
   margin-left: 0
-  
+
   @media screen and (max-width: $break-medium)
     font-size: 6vw
     line-height: 1.4em
-    
+
   @media screen and (max-width: $break-small)
     font-size: 25px
 
   &:after
     background-color: $text-color
-    
+
 .featured-products-holder
   +flexbox
   +justify-content(flex-start)
   margin: 80px auto 0
   max-width: 960px
-  
+
   @media screen and (max-width: $break-small)
     +flex-direction(column)
     margin-top: 0
-  
+
   h1.featured-title
     margin: 0 0 120px 0
     max-width: calc(100% - 360px)
     padding: 0
-    
+
     @media screen and (max-width: $break-small)
       margin-bottom: 20px
       max-width: 100%
@@ -89,28 +89,28 @@ a.shop-now-button
   position: relative
   text-align: center
   width: auto
-  
+
   &.footer-button
     display: none
-  
+
   @media screen and (max-width: $break-small)
     font-size: 13px
     height: 50px
     width: 100%
-    
+
     &.header-button
       display: none
-    
+
     &.footer-button
       display: block
 
 h1.gallery-title
   text-align: right
-  
+
   &:after
     left: auto
     right: 0
-    
+
 .image-gallery
   +flexbox
   +flex-direction(row)
@@ -121,10 +121,10 @@ h1.gallery-title
   position: relative
   text-transform: uppercase
   width: 100%
-  
+
   @media screen and (max-width: $break-small)
     padding: 20px 0
-  
+
   .gallery-image-container
     +flexbox
     +flex(1 0 33%)
@@ -139,39 +139,39 @@ h1.gallery-title
     &:nth-child(6n+1)
       left: -30px
       top: -30px
-      
+
       @media screen and (max-width: $break-medium)
         left: 0
         top: 0
-      
+
     &:nth-child(6n+2)
       left: -30px
       top: 0
-      
+
       @media screen and (max-width: $break-medium)
         left: 0
         top: 0
-      
+
     &:nth-child(6n+3)
       right: -30px
       top: -30px
-      
+
       @media screen and (max-width: $break-medium)
         left: -60px
         top: 0
-      
+
     &:nth-child(6n+4)
       top: 30px
-      
+
       @media screen and (max-width: $break-medium)
         left: -60px
         top: 0
-      
+
     @media screen and (max-width: $break-medium)
       +flex(1 0 50%)
       max-width: 50%
       padding-top: 3%
-      
+
     @media screen and (max-width: $break-small)
       +flex(1 0 100%)
       left: auto !important
@@ -179,18 +179,19 @@ h1.gallery-title
       padding: 10px 0
       right: auto !important
       top: 0 !important
-      
+
       &:nth-child(odd)
         padding-left: 20px
-        
+
       &:nth-child(even)
         padding-right: 20px
-        
+
     .gallery-image
+      +align-self(center)
       display: block
-      height: 100%
+      height: auto
       width: 100%
-      
+
     &.visible
       transform: translate(0,-20px)
       opacity: 1

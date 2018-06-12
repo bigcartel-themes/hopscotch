@@ -1,6 +1,6 @@
 {
   "name": "Hopscotch",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "images": [
     {
       "variable": "logo",
@@ -181,7 +181,7 @@
     "content_header_color": "{{ text_color }}",
     "content_color": "{{ text_color }}",
     "content_header_font_size": "18px",
-    "content_border_color": "transparent", 
+    "content_border_color": "transparent",
     "content_border_radius": "0px",
     "error_background_color": "#ea4859",
     "error_color": "#ffffff",
