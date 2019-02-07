@@ -18,15 +18,15 @@
       </div>
       <div class="header-content-block header-pages">
         <ul class="header-page-navigation">
-          <li class="header-page-link"><a href="/products" title="Products">Products</a></li>
+          <li class="header-page-link"><a href="/products">{{ pages.products.name }}</a></li>
           {% for page in pages.all limit: theme.nav_items %}
             <li class="header-page-link">{{ page | link_to }}</li>
           {% endfor %}
-          <li class="header-page-link"><a href="/contact" title="Contact">Contact</a></li>
+          <li class="header-page-link"><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="header-content-block header-cart">
-        <a class="cart-link" href="/cart" title="View Cart">Cart / {{ cart.item_count | pluralize: "Item", "Items" }}</a>
+        <a class="cart-link" href="/cart">Cart / {{ cart.item_count | pluralize: "Item", "Items" }}</a>
       </div>
     </header>
     <div class="content">
@@ -46,11 +46,11 @@
       <div class="footer-wrapper wrapper">
         <div class="footer-content-block footer-navigation footer-page-links">
           <ul class="footer-link-list">
-            <li><a href="/products" title="Products">Products</a></li>
+            <li><a href="/products">{{ pages.products.name }}</a></li>
             {% for page in pages.all %}
               <li>{{ page | link_to }}</li>
             {% endfor %}
-            <li><a href="/contact" title="Contact">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank or store.website != blank %}
@@ -59,23 +59,23 @@
               {% if theme.instagram_url != blank %}
                 <li><a target="_blank" title="Instagram" href="{{ theme.instagram_url }}">Instagram</a></li>
               {% endif %}
-              
+
               {% if theme.twitter_url != blank %}
                 <li><a target="_blank" title="Twitter" href="{{ theme.twitter_url }}">Twitter</a></li>
               {% endif %}
-              
+
               {% if theme.facebook_url != blank %}
                 <li><a target="_blank" title="Facebook" href="{{ theme.facebook_url }}">Facebook</a></li>
               {% endif %}
-      
+
               {% if theme.pinterest_url != blank %}
                 <li><a target="_blank" title="Pinterest" href="{{ theme.pinterest_url }}">Pinterest</a></li>
               {% endif %}
-              
+
               {% if theme.tumblr_url != blank %}
                 <li><a target="_blank" title="Tumblr" href="{{ theme.tumblr_url }}">Tumblr</a></li>
               {% endif %}
-              
+
               {% if store.website != blank %}
                 <li><a href="{{ store.website }}">Back to site</a></li>
               {% endif %}
