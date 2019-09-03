@@ -3,6 +3,12 @@ var inPreview = (/\/admin\/design/.test(top.location.pathname));
 $('.dropdown-navigation-title').click(function(e) {
   $('.dropdown-navigation-list').toggleClass('visible');
 });
+$('.dropdown-navigation-title').on('keydown', function(e) {
+  if (e.keyCode == 32) { // Spacebar
+    e.preventDefault();
+    $('.dropdown-navigation-list').toggleClass('visible');
+  }
+});
 
 $('.option-quantity').blur(function(e) {
   $(this).closest('form').submit();
