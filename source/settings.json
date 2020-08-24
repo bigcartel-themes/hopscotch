@@ -1,6 +1,6 @@
 {
   "name": "Hopscotch",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "images": [
     {
       "variable": "logo",
@@ -51,12 +51,12 @@
     {
       "variable": "secondary_text_color",
       "label": "Secondary Text",
-      "default": "#AD985B"
+      "default": "#776633"
     },
     {
       "variable": "error_color",
       "label": "Errors",
-      "default": "#B36C00"
+      "default": "#945a02"
     }
   ],
   "options": [
@@ -94,7 +94,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 24,
+      "default": 36,
       "description": "The number of products displayed per page"
     },
     {
