@@ -4,21 +4,20 @@
   list-style: none
   margin: 0
   padding: 0
-  
+
 .cart-item
   +flexbox
   +align-items(center)
   font-size: 20px
   line-height: 25px
   margin-bottom: 50px
-  
+
   @media screen and (max-width: $break-medium)
-    font-size: 15px
-    
+    font-size: 16px
+
   @media screen and (max-width: $break-small)
     +flex-wrap(wrap)
-    font-size: 13px
-  
+
   &:last-child
     margin-bottom: 0
 
@@ -29,34 +28,31 @@
   height: 127px
   margin-right: 77px
   width: 192px
-  
+
   @media screen and (max-width: $break-small)
     +flex-basis(30%)
     height: 120px
     margin-right: 0
     width: 120px
-    
+
 .cart-item-details
   max-width: 300px
   width: 100%
-  
+
   @media screen and (max-width: $break-small)
     +flex-basis(80%)
     order: 4
     padding-top: 10px
-    
+
 .cart-item-details-option
   color: $secondary-text-color
-  font-size: 15px
-  
-  @media screen and (max-width: $break-small)
-    font-size: 13px
+  font-size: 16px
 
 .cart-item-details-price
   padding-left: 100px
   text-align: left
   width: 200px
-  
+
   @media screen and (max-width: $break-small)
     +align-self(baseline)
     +flex-basis(20%)
@@ -68,11 +64,11 @@
 
 .cart-item-quantity-holder
   margin-left: auto
-  
+
   @media screen and (max-width: $break-small)
     +flex-basis(70%)
     text-align: right
-  
+
   input
     +all-transitions
     background: none
@@ -81,38 +77,38 @@
     padding: 8px 0
     text-align: center
     width: 56px
-    
+
     &:active, &:focus
       border-color: $text-color
 
 .cart-item-remove
   text-align: right
   width: 100px
-  
+
   @media screen and (max-width: $break-small)
     display: none
-  
+
   .cart-remove-icon
     +all-transitions
     cursor: pointer
     fill: $theme-color
-    
+
   &:hover .cart-remove-icon
     fill: $text-color
-  
+
 .cart-footer
   +flexbox
   +align-items(center)
   +justify-content(flex-end)
   margin-top: 75px
-  
+
   @media screen and (max-width: $break-small)
     +flex-direction(column)
-  
+
 .cart-subtotal
   padding-left: 100px
   width: 300px
-  
+
   @media screen and (max-width: $break-small)
     margin-bottom: 50px
     order: 1
@@ -122,13 +118,13 @@
 
 .cart-subtotal-label
   display: none
-  
+
   @media screen and (max-width: $break-small)
     display: inline-block
-    
+
 .checkout-btn
   margin-left: 60px
-  
+
   @media screen and (max-width: $break-small)
     margin: 0
     order: 2
@@ -141,20 +137,20 @@ a.continue-shopping
   color: $secondary-text-color
   padding: 0
   white-space: nowrap
-  
+
   &:hover, &:focus
     border-color: transparent
     color: $text-color
-  
+
   @media screen and (max-width: $break-small)
     margin-top: 8px
     order: 3
-    
+
 a.start-shopping
   display: inline-block
   float: right
   margin-right: 60px
-  
+
   @media screen and (max-width: $break-small)
     float: none
     margin: 0

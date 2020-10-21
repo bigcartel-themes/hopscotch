@@ -9,13 +9,13 @@
   max-width: 660px
   width: 100%
 
-  &.contact-captcha
+  &.contact-recaptcha
     margin-bottom: 40px
 
 .contact-label
   color: $secondary-text-color
   display: block
-  font-size: 14px
+  font-size: 16px
   margin-bottom: 16px
 
   @media screen and (max-width: $break-small)
@@ -52,19 +52,14 @@
     button
       width: 100%
 
-#captcha_image
-  height: 67px
-  position: absolute
-  right: 4px
-  top: 4px
-
-  @media screen and (max-width: $break-small)
-    height: 42px
-
-.captcha-instructions
+.recaptcha-note
   color: $secondary-text-color
-  font-size: 13px
+  font-size: 15px
+  line-height: 1.5em
   margin-top: 10px
+
+  a
+    text-decoration: underline
 
 .back-to-shop-button
   display: inline-block
