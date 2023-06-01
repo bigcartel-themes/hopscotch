@@ -491,14 +491,31 @@ h3
     left: auto
     right: 0
 
-  a
-    +all-transitions
-    color: $secondary-text-color
-    font-style: italic
-    white-space: nowrap
+  .bigcartel-credit
+    line-height: 1em
+    font-size: 15px
+    display: flex
+    align-items: center
+    gap: 8px
+    outline-offset: 4px
+    padding: 2px 0
+    text-decoration: none
+    transition: color .2s ease
+
+    @media screen and (max-width: $break-small)
+      display: inline-flex
 
     &:hover
-      color: $text-color
+      color: $secondary-text-color
+
+    &__text
+      position: relative
+
+    &__lockup
+      display: block
+      fill: currentColor
+      padding-top: 1px
+      width: 86px
 
   .store-name
     margin: 20px 0 30px
