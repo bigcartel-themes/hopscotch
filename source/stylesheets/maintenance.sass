@@ -1,0 +1,38 @@
+@import 'variables'
+
+#maintenance
+  +align-items(center)
+  +justify-content(center)
+  +flexbox
+  font-size: 20px
+  height: auto
+  padding: 100px 20px
+  text-align: center
+  min-height: 0
+
+  .maintenance-container
+    display: grid
+    gap: 32px
+
+  .maintenance-store-name
+    font-size: 1.5em
+    text-align: center
+
+  .social-links
+    +flexbox
+    +justify-content(center)
+    +flex-wrap(wrap)
+    +align-items(center)
+    list-style: none
+    font-size: 16px
+    gap: 16px
+    margin: 24px 0
+    padding: 0
+
+    a
+      color: $text-color
+      text-decoration: underline
+      outline-offset: 4px
+
+      &:hover
+        color: $secondary-text-color
