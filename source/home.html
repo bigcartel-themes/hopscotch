@@ -7,7 +7,7 @@
 {% endif %}
 
 {% if theme.welcome_image or theme.welcome_header != blank %}
-  <div class="home-welcome">
+  <div class="home-welcome" role="banner" aria-label="Welcome Banner">
     {% if theme.welcome_image %}
       <img class="welcome-image" src="{{ theme.images.welcome_image.url | constrain: 2400,1400 }}">
     {% endif %}
