@@ -11,14 +11,30 @@
     <div class="maintenance-container">
       <h1 class="maintenance-store-name">{{ store.name }}</h1>
       {% if theme.maintenance_message != blank %}<div class="maintenance-message">{{ theme.maintenance_message }}</div>{% endif %}
-      {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank %}
+      {% if theme.instagram_url != blank
+        or theme.tiktok_url != blank
+        or theme.twitter_url != blank
+        or theme.snapchat_url != blank
+        or theme.facebook_url != blank
+        or theme.pinterest_url != blank
+        or theme.youtube_url != blank
+        or theme.tumblr_url != blank
+        or theme.bandcamp_url != blank %}
         <ul class="social-links">
           {% if theme.instagram_url != blank %}
             <li><a href="{{ theme.instagram_url }}">Instagram</a></li>
           {% endif %}
 
+          {% if theme.tiktok_url != blank %}
+            <li><a href="{{ theme.tiktok_url }}">TikTok</a></li>
+          {% endif %}
+
           {% if theme.twitter_url != blank %}
             <li><a href="{{ theme.twitter_url }}">Twitter</a></li>
+          {% endif %}
+
+          {% if theme.snapchat_url != blank %}
+            <li><a href="{{ theme.snapchat_url }}">Snapchat</a></li>
           {% endif %}
 
           {% if theme.facebook_url != blank %}
@@ -29,8 +45,16 @@
             <li><a href="{{ theme.pinterest_url }}">Pinterest</a></li>
           {% endif %}
 
+          {% if theme.youtube_url != blank %}
+            <li><a href="{{ theme.youtube_url }}">YouTube</a></li>
+          {% endif %}
+
           {% if theme.tumblr_url != blank %}
             <li><a href="{{ theme.tumblr_url }}">Tumblr</a></li>
+          {% endif %}
+
+          {% if theme.bandcamp_url != blank %}
+            <li><a href="{{ theme.bandcamp_url }}">Bandcamp</a></li>
           {% endif %}
         </ul>
       {% endif %}
