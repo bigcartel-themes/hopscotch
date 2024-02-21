@@ -3,13 +3,17 @@
 
   {% if categories.active != blank or artists.active != blank %}
     <div class="dropdown-navigation">
-      <div class="dropdown-navigation-title" tabindex="0"><span class="dropdown-title">{{ page.name }}</span> <span class="dropdown-select-title">Select Category</span> <svg class="down-arrow" width="11" height="13" viewBox="0 0 11 13"><path d="M9.65 7.65l.71.71-4.5 4.5c-.1.1-.23.15-.35.15-.12 0-.26-.05-.35-.15l-4.5-4.5.71-.71 3.65 3.65V0h1v11.29l3.63-3.64z" fill-rule="nonzero" /></svg></div>
-      <ul class="dropdown-navigation-list">
+      <button class="dropdown-navigation-title" aria-controls="category-dropdown" aria-expanded="false">
+        <span class="dropdown-title">{{ page.name }}</span>
+        <span class="dropdown-select-title">Select Category</span>
+        <svg aria-hidden="true" class="down-arrow" width="11" height="13" viewBox="0 0 11 13"><path d="M9.65 7.65l.71.71-4.5 4.5c-.1.1-.23.15-.35.15-.12 0-.26-.05-.35-.15l-4.5-4.5.71-.71 3.65 3.65V0h1v11.29l3.63-3.64z" fill-rule="nonzero" /></svg>
+      </button>
+      <ul class="dropdown-navigation-list" id="category-dropdown" aria-hidden="true">
         {% for category in categories.active %}
-          <li tabindex="0">{{ category | link_to }}</li>
+          <li>{{ category | link_to }}</li>
         {% endfor %}
         {% for artist in artists.active %}
-          <li tabindex="0">{{ artist | link_to }}</li>
+          <li>{{ artist | link_to }}</li>
         {% endfor %}
       </ul>
     </div>

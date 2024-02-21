@@ -1,13 +1,14 @@
 var inPreview = (/http(s?):\/\/draft-+\w+\.bigcartel\.(test|biz|com)/.test(window.origin)||(/\/admin\/design/.test(top.location.pathname)));
 
-$('.dropdown-navigation-title').click(function(e) {
-  $('.dropdown-navigation-list').toggleClass('visible');
-});
-$('.dropdown-navigation-title').on('keydown', function(e) {
-  if (e.keyCode == 32) { // Spacebar
-    e.preventDefault();
-    $('.dropdown-navigation-list').toggleClass('visible');
-  }
+$(document).on('click', '.dropdown-navigation-title', function(e) {
+  let $this = $(this);
+  let $dropdownNavigationList = $('.dropdown-navigation-list');
+  $dropdownNavigationList.attr('aria-hidden', function(i, attr) {
+    return attr === 'true' ? 'false' : 'true';
+  });
+  $this.attr('aria-expanded', function(i, attr) {
+    return attr === 'true' ? 'false' : 'true';
+  });
 });
 
 $('.option-quantity').blur(function(e) {
