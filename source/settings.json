@@ -201,16 +201,8 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 36,
+      "default": 48,
       "description": "The number of products displayed per page"
-    },
-    {
-      "variable": "product_thumbnail_caption_display",
-      "label": "Product Thumbnail Text",
-      "type": "select",
-      "options": ["Vertical", "Horizontal"],
-      "default": "Horizontal",
-      "description": "Determines orientation for product thumbnail text"
     },
     {
       "variable": "nav_items",
