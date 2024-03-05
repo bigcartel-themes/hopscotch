@@ -153,59 +153,6 @@ button.dropdown-navigation-title
     opacity: 1
     visibility: visible
 
-  &:nth-child(even)
-    +justify-content(flex-start)
-    text-align: right
-
-    .product-image-holder
-      left: 0
-      width: calc(100% - 60px)
-
-    .product-info
-      +transform(rotate(90deg) translate(0, 0))
-      transform-origin: left top
-      display: inline-block
-      height: 60px
-      left: 100%
-      position: absolute
-      text-align: left
-      top: 0
-      white-space: nowrap
-
-    @media screen and (max-width: $break-small)
-      margin-left: auto
-
-  &:nth-child(odd)
-
-    .product-image-holder
-      left: 60px
-      width: calc(100% - 60px)
-
-    .product-info
-      +transform(rotate(-90deg) translate(0, 0))
-      transform-origin: left top
-      display: inline-block
-      height: 60px
-      left: 0
-      position: absolute
-      text-align: left
-      white-space: nowrap
-
-  &.horizontal
-
-    .product-image-holder
-      left: 0
-      width: 100%
-
-    .product-info
-      +transform(none)
-      display: block
-      left: 0
-      bottom: 0
-      position: relative
-      top: 0
-
-
   &:nth-child(8n+1)
     left: 60px
     top: -30px
@@ -286,9 +233,9 @@ a.product-link
     top: 0 !important
 
 .product-info
-  font-size: 14px
+  font-size: 15px
   letter-spacing: 2px
-  line-height: 20px
+  line-height: 1.5em
   padding-top: 7px
   width: 88%
 

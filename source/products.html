@@ -32,11 +32,11 @@
         	{% when 'coming-soon' %}
         		{% assign product_status = 'Coming soon' %}
         {% endcase %}
-        <div class="{{ theme.product_thumbnail_caption_display | downcase }} product-card {{ product.css_class }}" data-scroll>
+        <div class="product-card {{ product.css_class }}" data-scroll>
           <a class="product-link" href="{{ product.url }}">
             <div class="product-image-holder">
               <img alt="Image of {{ product.name | escape }}" class="product-list-image" src="{{ product.image | product_image_url | constrain: '1000' }}">
-              <div class="view-details">View Details</div>
+              <div class="view-details" aria-hidden="true">View Details</div>
             </div>
             <div class="product-info">
               <div class="product-price">
