@@ -37,7 +37,7 @@
               "primary_font": "Asap"
             },
             "colors": {
-              "theme_color": "#FD0400",
+              "theme_color": "#EC0400",
               "background_color": "#FFFFFF",
               "accent_background_color": "#F9F7F2",
               "text_color": "#000000",
@@ -129,7 +129,7 @@
     {
       "variable": "theme_color",
       "label": "Theme Color",
-      "default": "#FD0400"
+      "default": "#EC0400"
     },
     {
       "variable": "background_color",
