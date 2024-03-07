@@ -22,26 +22,27 @@
           {% for page in pages.all limit: theme.nav_items %}
             <li class="header-page-link">{{ page | link_to }}</li>
           {% endfor %}
-          <li class="header-page-link"><a href="/contact">Contact</a></li>
+          <li class="header-page-link"><a href="/contact">{{ pages.contact.name }}</a></li>
         </ul>
       </div>
       <div class="header-content-block header-cart">
         <a class="cart-link" href="/cart">Cart / {{ cart.item_count | pluralize: "Item", "Items" }}</a>
       </div>
     </header>
-    <div class="content">
+    <main class="content" id="main">
       <div class="content-wrapper wrapper">
-
         {% if page.category == 'custom' %}
-          <h1 class="page-title">{{ page.name }}</h1>
-          <div class="page-content {{ page.category }}-content">
-            {{ page_content | paragraphs }}
+          <div class="{{ page.category }}-content">
+            <h1 class="page-title">{{ page.name }}</h1>
+            <div class="page-content">
+              {{ page_content | paragraphs }}
+            </div>
           </div>
         {% else %}
           {{ page_content }}
         {% endif %}
       </div>
-    </div>
+    </main>
     <footer class="footer">
       <div class="footer-wrapper wrapper">
         <div class="footer-content-block footer-navigation footer-page-links">
@@ -50,7 +51,7 @@
             {% for page in pages.all %}
               <li>{{ page | link_to }}</li>
             {% endfor %}
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/contact">{{ pages.contact.name }}</a></li>
           </ul>
         </div>
         {% if theme.instagram_url != blank

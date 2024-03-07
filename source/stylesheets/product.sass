@@ -1,153 +1,89 @@
-@import 'variables'
+.product-container
+  display: grid
+  grid-template-columns: 1fr 400px
+  column-gap: 60px
+  row-gap: 40px
 
-.primary-image-container
-  margin-bottom: 80px
-  max-width: 1200px
-  width: 100%
+  @media screen and (max-width: $break-large)
+    column-gap: 40px
 
-  @media screen and (max-width: $break-small)
-    margin-bottom: 46px
-
-  .primary-image
-    display: block
-    width: 100%
-
-.product-page-details
-  margin: 0 auto
-  max-width: 960px
-
-  .product-price
-    font-size: 30px
-    letter-spacing: 3px
-    line-height: 50px
-
-    @media screen and (max-width: $break-small)
-      font-size: 18px
-      letter-spacing: 2px
-      line-height: 30px
-
-  h1.product-name
-    line-height: 75px
-    margin-top: 20px
-
-    @media screen and (max-width: $break-small)
-      line-height: 30px
-      margin-top: 10px
-
-  .product-status
-    color: $theme-color
-    text-transform: uppercase
-
-.product-details
-  +flexbox
-  +justify-content(flex-start)
-  +flex-direction(row)
-
-  @media screen and (max-width: $break-small)
-    +flex-direction(column)
-
-.product-description
-  order: 1
-  padding-right: 70px
-  width: 100%
-
-  @media screen and (max-width: $break-small)
-    order: 2
-    padding-right: 0
-
-  a
-    +all-transitions
-    color: $secondary-text-color
-    text-decoration: underline
-
-    &:hover
-      color: $text-color
-
-  img, iframe
-    display: block
-    max-width: 100%
-
-.product-form
-  margin-left: auto
-  max-width: 300px
-  order: 2
-  width: 100%
-
-  @media screen and (max-width: $break-small)
-    margin: 0 0 40px 0
-    max-width: 100%
-    order: 1
-
-.product-quantity
-  display: none
-
-.add-to-cart-button
-  padding: 0
-  width: 100%
+  @media screen and (max-width: $break-medium)
+    grid-template-columns: 1fr
 
 .reset-selection-button-container
   text-align: center
   width: 100%
 
-button.reset-selection-button
-  display: none
-  height: auto
-  max-width: 100%
-  line-height: normal
-  margin: 20px auto 0
-  padding: 4px
+  button.reset-selection-button
+    display: none
 
-.secondary-product-images
-  margin-top: 100px
+.product-form
+  width: 100%
 
-  .secondary-product-image
-    +flexbox
-    +flex(1 0 75%)
-    +justify-content(flex-end)
-    +transition(opacity 1s cubic-bezier(.25,.1,.25,1),transform .5s cubic-bezier(.25,.1,.25,1))
-    max-width: 750px
-    opacity: 0
-    padding: 2% 15px 2% 15px
-    position: relative
-    width: 100%
+  button
+    max-width: 100%
 
-    @media screen and (max-width: $break-small)
-      +flex(1 0 100%)
-      display: block
-      max-width: 100%
+  @media screen and (max-width: $break-large)
+    max-width: 100%
 
-      &:nth-child(odd)
-        padding-left: 30px
-        padding-right: 0
+.product-selects
+  margin-bottom: 20px
 
-      &:nth-child(even)
-        padding-left: 0
-        padding-right: 30px
+.product-option-groups
+  display: flex
+  flex-direction: column
+  gap: 16px
 
-    img
-      align-self: center
-      display: block
-      width: 100%
+.product-detail
+  display: flex
+  flex-direction: column
+  row-gap: 36px
 
-    &.visible
-      transform: translate(0,-20px)
-      opacity: 1
-      visibility: visible
+  &__header
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    margin-bottom: 40px
 
-    &:nth-child(1)
-      margin-left: auto
+  &__status
+    font-size: .975rem
+    line-height: normal
+    display: inline-block
+    padding: 4px 6px
+    margin-left: 8px
+    background: var(--accent-background-color)
+    border-radius: var(--border-radius-sm)
 
-    &:nth-child(2)
-      +flex(1 0 50%)
+  &__pricing
+    display: flex
+    align-items: center
+    font-size: 1.25em
 
-    &:nth-child(3)
-      +flex(1 0 50%)
+  &__description
+    p
+      margin: revert
 
-    &:nth-child(4)
-      margin-left: 30px
+    &>:first-child
+      margin-top: 0
 
-      @media screen and (max-width: $break-small)
-        right: 30px
+    &>:last-child
+      margin-bottom: 0
+
+    ol, ul
+      margin: 1em
+
+    ul
+      list-style: disc
+
+    ol
+      list-style: decimal
+
+    a
+      text-decoration: underline
+
+  .page-title
+    margin-bottom: 0
+    text-align: left
 
 #instant-checkout-button
-  margin-top: 20px
+  margin-top: 12px

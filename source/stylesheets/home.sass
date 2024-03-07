@@ -67,20 +67,20 @@ h1.welcome-header
 .featured-products-holder
   +flexbox
   +justify-content(flex-start)
-  margin: 80px auto 0
+  margin: 0 auto
   max-width: 960px
+  margin-bottom: 80px
 
   @media screen and (max-width: $break-small)
     +flex-direction(column)
-    margin-top: 0
+    margin-bottom: 40px
 
   h1.featured-title
-    margin: 0 0 120px 0
+    margin: 0
     max-width: calc(100% - 360px)
     padding: 0
 
     @media screen and (max-width: $break-small)
-      margin-bottom: 20px
       max-width: 100%
 
 a.shop-now-button
@@ -88,15 +88,11 @@ a.shop-now-button
   margin: 0 0 0 auto
   position: relative
   text-align: center
-  width: auto
 
   &.footer-button
     display: none
 
   @media screen and (max-width: $break-small)
-    height: 50px
-    line-height: 42px
-    width: 100%
 
     &.header-button
       display: none
@@ -119,7 +115,6 @@ h1.gallery-title
   margin: 0 auto
   padding: 30px 50px
   position: relative
-  text-transform: uppercase
   width: 100%
 
   @media screen and (max-width: $break-small)
