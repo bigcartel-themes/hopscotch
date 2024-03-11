@@ -350,7 +350,6 @@
     "button_text_transform": "uppercase",
     "link_color": "{{ theme_color }}",
     "link_hover_color": "{{ text_color }}",
-    "step_header_color": "{{ text_color }}",
     "step_header_font_size": "18px",
     "summary_color": "{{ text_color }}",
     "summary_secondary_color": "{{ text_color }}",
