@@ -20,6 +20,104 @@
       "description": "Displays image grid on the Home page"
     }
   ],
+  "preset_styles": {
+    "preview": {
+      "title_font": "primary_font",
+      "body_font": "primary_font",
+      "text_color": "text_color",
+      "background_color": "background_color"
+    },
+    "presets": [
+      {
+        "group_name": "Natural",
+        "styles": [
+          {
+            "style_name": "Natural #1",
+            "fonts": {
+              "primary_font": "Asap"
+            },
+            "colors": {
+              "theme_color": "#EC0400",
+              "background_color": "#FFFFFF",
+              "accent_background_color": "#F9F7F2",
+              "text_color": "#000000",
+              "secondary_text_color": "#776633"
+            }
+          },
+          {
+            "style_name": "Natural #2",
+            "fonts": {
+              "primary_font": "Prata"
+            },
+            "colors": {
+              "theme_color": "#8A5A5A",
+              "background_color": "#F8F8F8",
+              "accent_background_color": "#EBE7E7",
+              "text_color": "#0F1B27",
+              "secondary_text_color": "#0F1B27"
+            }
+          },
+          {
+            "style_name": "Natural #3",
+            "fonts": {
+              "primary_font": "Cutive Mono"
+            },
+            "colors": {
+              "theme_color": "#9D5C63",
+              "background_color": "#FFFDFC",
+              "accent_background_color": "#E7EEF9",
+              "text_color": "#584B53",
+              "secondary_text_color": "#584B53"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Classic",
+        "styles": [
+          {
+            "style_name": "Classic #1",
+            "fonts": {
+              "primary_font": "Sora"
+            },
+            "colors": {
+              "theme_color": "#5900FF",
+              "background_color": "#FFFFFF",
+              "accent_background_color": "#FFFFFF",
+              "text_color": "#0B0423",
+              "secondary_text_color": "#0B0423"
+            }
+          },
+          {
+            "style_name": "Classic #2",
+            "fonts": {
+              "primary_font": "Inconsolata"
+            },
+            "colors": {
+              "theme_color": "#AEAEAE",
+              "background_color": "#141415",
+              "accent_background_color": "#333333",
+              "text_color": "#F8F8F8",
+              "secondary_text_color": "#F8F8F8"
+            }
+          },
+          {
+            "style_name": "Classic #3",
+            "fonts": {
+              "primary_font": "DM Sans"
+            },
+            "colors": {
+              "theme_color": "#5900FF",
+              "background_color": "#FFFFFF",
+              "accent_background_color": "#F3F3F5",
+              "text_color": "#111111",
+              "secondary_text_color": "#111111"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "fonts": [
     {
       "variable": "primary_font",
@@ -31,7 +129,7 @@
     {
       "variable": "theme_color",
       "label": "Theme Color",
-      "default": "#FD0400"
+      "default": "#EC0400"
     },
     {
       "variable": "background_color",
@@ -52,11 +150,6 @@
       "variable": "secondary_text_color",
       "label": "Secondary Text",
       "default": "#776633"
-    },
-    {
-      "variable": "error_color",
-      "label": "Errors",
-      "default": "#945a02"
     }
   ],
   "options": [
