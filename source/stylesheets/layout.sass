@@ -8,7 +8,7 @@ body
   background-color: var(--background-color)
   color: var(--text-color)
   font-family: var(--primary-font)
-  font-size: 20px
+  font-size: 18px
   min-height: 100vh
 
 .accent-background
@@ -44,11 +44,10 @@ button.button, a.button
   cursor: pointer
   font-family: var(--primary-font)
   font-size: 16px
-  letter-spacing: 2px
+  letter-spacing: 1px
   line-height: 67px
   padding: 0 65px
   text-align: center
-  text-transform: uppercase
   white-space: nowrap
 
   &.minimal-button
@@ -94,11 +93,9 @@ input, textarea
   font-family: var(--primary-font)
   font-size: 16px
   height: 75px
-  letter-spacing: 2px
   max-width: 100%
   padding: 0
   position: relative
-  text-transform: uppercase
   width: 100%
 
   @media screen and (max-width: $break-small)
@@ -115,11 +112,9 @@ input, textarea
     font-family: var(--primary-font)
     font-size: 16px
     height: 100%
-    letter-spacing: 2px
     line-height: 67px
     padding: 0 66px 0 16px
     position: relative
-    text-transform: uppercase
     width: 100%
     z-index: 2
 
@@ -170,21 +165,18 @@ h1, h2, h3, h4, h5, h6
   padding: 0
   position: relative
   text-align: left
-  text-transform: uppercase
 
 h1
   font-size: 50px
   line-height: 1.2em
-  letter-spacing: 10px
+  letter-spacing: .8px
 
   @media screen and (max-width: $break-medium)
     font-size: 40px
-    letter-spacing: 15px
     line-height: 50px
 
   @media screen and (max-width: $break-small)
     font-size: 25px
-    letter-spacing: 5px
     line-height: 30px
 
   &.page-title
@@ -224,12 +216,10 @@ h1
 
 h2
   font-size: 30px
-  letter-spacing: 3px
   line-height: 30px
 
   @media screen and (max-width: $break-small)
     font-size: 18px
-    letter-spacing: 2px
 
 h3
   font-size: 20px
@@ -398,17 +388,26 @@ h3
   max-width: 660px
   width: 100%
 
-  img, iframe
-    display: block
-    max-width: 100%
+  p
+    margin: revert
+
+  &>:first-child
+    margin-top: 0
+
+  &>:last-child
+    margin-bottom: 0
+
+  ol, ul
+    margin: 1em
+
+  ul
+    list-style: disc
+
+  ol
+    list-style: decimal
 
   a
-    +all-transitions
-    color: var(--secondary-text-color)
     text-decoration: underline
-
-    &:hover
-      color: var(--text-color)
 
   @media screen and (max-width: $break-small)
     font-size: 16px
@@ -469,7 +468,6 @@ h3
     @media screen and (max-width: $break-small)
       border-bottom: 4px solid var(--text-color)
       font-size: 14px
-      text-transform: uppercase
 
       &:last-child
         border-bottom: 0
@@ -530,3 +528,11 @@ h3
       +transform(translateX(-50%))
       display: block
       left: 50%
+
+.blur-up
+  transition: filter .2s
+  filter: blur(5px)
+  transform: translate3d(0, 0, 0)
+
+  &.lazyloaded
+    filter: blur(0)
