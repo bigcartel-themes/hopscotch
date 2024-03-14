@@ -1,4 +1,3 @@
-@import 'variables'
 
 .cart-items
   list-style: none
@@ -45,7 +44,7 @@
     padding-top: 10px
 
 .cart-item-details-option
-  color: $secondary-text-color
+  color: var(--secondary-text-color)
   font-size: 16px
 
 .cart-item-details-price
@@ -73,13 +72,13 @@
     +all-transitions
     background: none
     border: none
-    border-bottom: 4px solid $secondary-text-color
+    border-bottom: 4px solid var(--secondary-text-color)
     padding: 8px 0
     text-align: center
     width: 56px
 
     &:active, &:focus
-      border-color: $text-color
+      border-color: var(--text-color)
 
 .cart-item-remove
   text-align: right
@@ -91,10 +90,10 @@
   .cart-remove-icon
     +all-transitions
     cursor: pointer
-    fill: $theme-color
+    fill: var(--theme-color)
 
   &:hover .cart-remove-icon
-    fill: $text-color
+    fill: var(--text-color)
 
 .cart-footer
   +flexbox
@@ -134,13 +133,13 @@ a.continue-shopping
   +all-transitions
   background-color: transparent
   border-color: transparent
-  color: $secondary-text-color
+  color: var(--secondary-text-color)
   padding: 0
   white-space: nowrap
 
   &:hover, &:focus
     border-color: transparent
-    color: $text-color
+    color: var(--text-color)
 
   @media screen and (max-width: $break-small)
     margin-top: 8px
