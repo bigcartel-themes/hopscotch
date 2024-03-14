@@ -11,25 +11,6 @@ body
   font-size: 18px
   min-height: 100vh
 
-.accent-background
-  background-color: var(--accent-background-color)
-  height: 45vh
-  max-width: 75%
-  position: absolute
-  z-index: -1
-  width: 100%
-
-  @media screen and (max-width: $break-small)
-    height: 30vh
-
-  &:nth-of-type(1)
-    left: 0
-    top: 0
-
-  &:nth-of-type(2)
-    right: 0
-    margin-top: 150vh
-
 a, a:visited
   color: var(--text-color)
   text-decoration: none
@@ -54,7 +35,7 @@ button.button, a.button
     background: none
     color: var(--text-color)
     border: none
-    font-size: 14px
+    text-decoration: underline
 
     &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
       +transform(none)
@@ -74,7 +55,6 @@ button.button, a.button
     opacity: .3
 
   @media screen and (max-width: $break-small)
-    font-size: 14px
     line-height: 57px
 
 input, textarea
@@ -248,6 +228,7 @@ h3
   +flexbox
   +align-items(center)
   +justify-content(space-between)
+  background: var(--accent-background-color)
   font-size: 16px
   height: 150px
   padding: 0 50px
@@ -291,7 +272,6 @@ h3
   text-align: center
 
   @media screen and (max-width: $break-small)
-    font-size: 14px
     padding: 0
     text-align: left
 
@@ -361,7 +341,6 @@ h3
 
   @media screen and (max-width: $break-small)
     +flex-basis(50%)
-    font-size: 14px
     order: 2
     text-align: right
 
@@ -412,25 +391,77 @@ h3
   @media screen and (max-width: $break-small)
     font-size: 16px
 
-.footer
-  font-size: 16px
-  padding: 100px 50px
+footer
+  background: var(--accent-background-color)
+  color: var(--accent-text-color)
+  padding: 64px 0
+  width: 100%
 
-  @media screen and (max-width: $break-small)
-    padding: 20px
+  @media screen and (max-width: $break-medium)
+    padding: 32px 0
 
-.footer-wrapper
-  +flexbox
-  +align-items(flex-start)
-  max-width: 960px
+  .wrapper
+    display: flex
+    gap: 32px
+    align-items: flex-start
+    justify-content: flex-start
+    flex-wrap: wrap
+    max-width: 1024px
+    padding: 32px
 
-  @media screen and (max-width: $break-small)
-    +flex-direction(column)
-    text-align: center
+    @media screen and (max-width: $break-small)
+      flex-direction: column
+      padding: 0 16px
 
-.footer-content-block
-  margin-right: 140px
+  .credit-container
+    margin-left: auto
+    position: relative
+    padding-top: 10px
+
+    &:before
+      background-color: var(--theme-color)
+      content: ""
+      display: block
+      height: 4px
+      right: 0
+      position: absolute
+      top: -20px
+      width: 25px
+
+      @media screen and (max-width: $break-small)
+        display: none
+
+    @media screen and (max-width: $break-medium)
+      margin: 0
+
+    .bigcartel-credit
+      line-height: 1em
+      font-size: 15px
+      display: flex
+      color: var(--accent-text-color)
+      align-items: center
+      gap: 8px
+      outline-offset: 4px
+      padding: 2px 0
+      text-decoration: none
+
+      &__text
+        position: relative
+
+      &__lockup
+        display: block
+        fill: currentColor
+        padding-top: 1px
+        width: 86px
+
+.footernav
+  display: flex
+  flex-direction: column
+  flex: 1
+  max-width: 300px
+  padding-top: 10px
   position: relative
+  width: 100%
 
   &:before
     background-color: var(--theme-color)
@@ -442,92 +473,80 @@ h3
     top: -20px
     width: 25px
 
-  @media screen and (max-width: $break-small)
-    margin-right: 0
-    width: 100%
-
-    &:before
+    @media screen and (max-width: $break-small)
       display: none
 
-.footer-navigation
-
   @media screen and (max-width: $break-small)
-    border: 4px solid var(--text-color)
+    max-width: fit-content
 
-    &:nth-child(2)
-      border-top: 0
+  .footer-nav-title
+    color: var(--accent-text-color)
+    font-weight: 500
+    font-size: 1.2em
+    margin-bottom: 24px
+    position: relative
 
-.footer-link-list
-  list-style: none
-  margin: 0
-  padding: 0
+    &:after
+      background-color: var(--theme-color)
+      content: ""
+      display: block
+      height: 4px
+      left: 0
+      position: absolute
+      bottom: -10px
+      width: 25px
 
-  li
-    display: block
-
-    @media screen and (max-width: $break-small)
-      border-bottom: 4px solid var(--text-color)
-      font-size: 14px
-
-      &:last-child
-        border-bottom: 0
+    @media screen and (min-width: $break-small + 1)
+      display: none
 
     a
-      +all-transitions
-      display: block
-      padding: 12px 0
-      line-height: 20px
+      color: inherit
 
       &:hover
-        color: var(--secondary-text-color)
+        text-decoration: underline
 
-
-.footer-credit
-  margin-left: auto
-  margin-right: 0
-  text-align: right
-
-  &:before
-    left: auto
-    right: 0
-
-  .bigcartel-credit
-    line-height: 1em
-    font-size: 15px
+  ul
     display: flex
-    align-items: center
-    gap: 8px
-    outline-offset: 4px
-    padding: 2px 0
-    text-decoration: none
-    transition: color .2s ease
+    flex-direction: column
+    gap: 12px
 
     @media screen and (max-width: $break-small)
-      display: inline-flex
-
-    &:hover
-      color: var(--secondary-text-color)
-
-    &__text
-      position: relative
-
-    &__lockup
       display: block
-      fill: currentColor
-      padding-top: 1px
-      width: 86px
+      column-gap: 32px
+      column-count: 2
+      column-width: 40vw
 
-  .store-name
-    margin: 20px 0 30px
+    li
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
 
-  @media screen and (max-width: $break-small)
-    margin: 50px auto 0
-    text-align: center
+      @media screen and (max-width: $break-small)
+        padding-bottom: 16px
 
-    &:before
-      +transform(translateX(-50%))
-      display: block
-      left: 50%
+      a
+        +transition(opacity .2s ease-in-out)
+        color: var(--accent-text-color)
+        display: block
+        font-size: 15px
+
+        &:hover, &:focus
+          text-decoration: underline
+
+    &.social-links
+      a
+        color: var(--accent-text-color)
+        display: flex
+        align-items: center
+        gap: 12px
+
+        svg
+          flex-shrink: 0
+          fill: currentColor
+          height: 16px
+          position: relative
+          width: 16px
+
 
 .blur-up
   transition: filter .2s

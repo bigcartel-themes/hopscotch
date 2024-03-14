@@ -57,15 +57,6 @@ $('.cart-item-remove').click(function(e) {
   return false;
 });
 
-$(window).scroll(function(e){
-  parallax();
-});
-
-function parallax(){
-  var scrolled = $(window).scrollTop();
-  $('.accent-background').css('top',-(scrolled*0.20)+'px');
-}
-
 let animateElements = document.querySelectorAll('.product-card');
 
 let observer = new IntersectionObserver((entries, observer) => {

@@ -201,7 +201,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 36,
+      "default": 48,
       "description": "The number of products displayed per page"
     },
     {
