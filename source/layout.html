@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
     {{ head_content }}
+    <style>.preloader * { opacity: 0; }.transition-preloader * { transition: none !important }</style>
   </head>
-  <body id="{{ page.permalink }}" class="{{ page.category }}">
+  <body id="{{ page.permalink }}" class="{{ page.category }} preloader transition-preloader">
     <header class="header">
       <div class="header-content-block header-store-link">
         {% if theme.logo != blank %}
@@ -116,12 +117,23 @@
     </footer>
     <div class="accent-background"></div>
     <div class="accent-background"></div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      const themeOptions = {
+        showSoldOutOptions: {{ theme.show_sold_out_product_options }},
+        desktopProductPageImages: '{{ theme.desktop_product_page_images }}',
+        mobileProductPageImages: '{{ theme.mobile_product_page_images }}',
+        productImageZoom: {{ theme.product_image_zoom }},
+      }
+      const themeColors = {
+        backgroundColor: '{{ theme.background_color }}',
+        textColor: '{{ theme.text_color }}',
+      }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}"></script>
     <script src="{{ theme | theme_js_url }}"></script>
     {% if page.full_url contains '/product/' %}
       <script>
-        var show_sold_out_product_options = '{{ theme.show_sold_out_product_options }}';
         Product.find('{{ product.permalink }}', processProduct)
       </script>
     {% endif %}
