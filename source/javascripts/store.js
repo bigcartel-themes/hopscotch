@@ -66,17 +66,19 @@ function parallax(){
   $('.accent-background').css('top',-(scrolled*0.20)+'px');
 }
 
-document.addEventListener('DOMContentLoaded', function(){
-  var trigger = new ScrollTrigger({
-    toggle: {
-      visible: 'visible',
-      hidden: 'invisible'
-    },
-    offset: {
-      x: 0,
-      y: 60
-    },
-    addHeight: false,
-    once: true
-  }, document.body, window);
+let animateElements = document.querySelectorAll('.product-card');
+
+let observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.intersectionRatio >= 60 / entry.boundingClientRect.height) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  rootMargin: '0px',
+  threshold: Array.from({length: 100}, (_, i) => i / 100) // Array of thresholds from 0.0 to 1.0
+});
+
+animateElements.forEach(element => {
+  observer.observe(element);
 });
