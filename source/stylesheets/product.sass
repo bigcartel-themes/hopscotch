@@ -5,13 +5,14 @@
   row-gap: 40px
   margin-top: 60px
 
-
   @media screen and (max-width: $break-large)
     column-gap: 40px
     grid-template-columns: 1fr 360px
 
   @media screen and (max-width: $break-medium)
     grid-template-columns: minmax(0, 1fr)
+
+  @media screen and (max-width: $break-small)
     margin-top: 0
 
 .reset-selection-button-container
