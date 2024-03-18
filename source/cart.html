@@ -1,8 +1,9 @@
+<h1 class="page-title">{{ page.name }}</h1>
 {% if cart.items == blank %}
   <div class="empty-cart-message">
     <h1 class="page-title empty-cart-text">Your cart is empty</h1>
   </div>
-  
+
   <a class="button start-shopping" href="/products" title="Start Shopping">Start Shopping</a>
 {% endif %}
 
@@ -13,9 +14,8 @@
     {% endfor %}
   </ul>
 {% endif %}
-  
+
 {% if cart.items != blank %}
-  <h1 class="page-title">Your Cart</h1>
   <form method="post" action="/cart" id="cart-form" class="cart-form">
     <ul class="cart-items">
       {% for item in cart.items %}

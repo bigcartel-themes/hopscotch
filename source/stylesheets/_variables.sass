@@ -5,12 +5,23 @@
   --secondary-text-color: #{"{{ theme.secondary_text_color }}"}
   --accent-background-color: #{"{{ theme.accent_background_color }}"}
 
+  --welcome-overlay-color: #000000
+
+  --border-color: #{"rgba(var(--text-color-rgb),.5)"}
+
+  --button-text-color: var(--text-color)
+  --button-background-color: var(--background-color)
+
+  --announcement-background-color: var(--background-color)
+  --announcement-text-color: var(--text-color)
+
   --error-text-color: #FFFFFF
   --error-background-color: #9D0B1C
 
   --primary-font: #{"{{ theme.primary_font | font_family }}"}
 
   --border-radius: 0
+  --welcome-overlay-opacity: #{"{{ theme.welcome_overlay_opacity }}"}
 
 $break-large: 1200px
 $break-medium: 1023px

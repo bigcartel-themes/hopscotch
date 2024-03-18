@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 400px
   column-gap: 60px
   row-gap: 40px
-  margin-top: 60px
 
   @media screen and (max-width: $break-large)
     column-gap: 40px
@@ -12,15 +11,13 @@
   @media screen and (max-width: $break-medium)
     grid-template-columns: minmax(0, 1fr)
 
-  @media screen and (max-width: $break-small)
-    margin-top: 0
-
 .reset-selection-button-container
   text-align: center
   width: 100%
 
   button.reset-selection-button
     display: none
+    margin-top: 10px
 
 .product-form
   width: 100%
@@ -62,6 +59,9 @@
     align-items: center
     font-size: 1.5em
 
+    @media screen and (max-width: $break-small)
+      font-size: 1.3em
+
   &__description
 
     @media screen and (max-width: $break-small)
@@ -86,6 +86,9 @@
 
     a
       text-decoration: underline
+
+      &:hover
+        color: var(--secondary-text-color)
 
   .page-title
     margin-top: 0

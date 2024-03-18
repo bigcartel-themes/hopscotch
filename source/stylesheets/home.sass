@@ -3,6 +3,9 @@
   margin-bottom: 100px
   position: relative
 
+  @media screen and (max-width: $break-small)
+    margin-bottom: 32px
+
 .welcome-image
   display: block
   width: 100%
@@ -20,7 +23,7 @@
 .welcome-message
   +flexbox
   +align-items(center)
-  +animation(welcome-text .5s cubic-bezier(.25,.1,.25,1))
+  +animation(welcome-text .6s cubic-bezier(.25,.1,.25,1))
   bottom: 0
   left: 0
   margin: 120px auto 280px
@@ -38,53 +41,58 @@
     position: absolute
     right: 80px
 
+    .welcome-header
+      color: var(--background-color)
+
     @media screen and (max-width: $break-small)
       left: 40px
       right: 40px
 
-    h1.welcome-header
-      color: var(--background-color)
+.welcome-image-overlay
+  background: var(--welcome-overlay-color)
+  opacity: var(--welcome-overlay-opacity)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 
-      &:after
-        background-color: var(--theme-color)
-
-h1.welcome-header
-  color: var(--theme-color)
-  font-size: 5vw
+.welcome-header
+  color: var(--text-color)
+  font-size: clamp(1rem, 5vw, 6rem)
+  line-height: 1.2em
   margin-left: 0
 
   @media screen and (max-width: $break-medium)
     font-size: 6vw
-    line-height: 1.4em
 
   @media screen and (max-width: $break-small)
-    font-size: 25px
-
-  &:after
-    background-color: var(--text-color)
+    font-size: 1.5em
 
 .featured-products-holder
   +flexbox
   +justify-content(flex-start)
-  margin: 60px auto 0
+  align-items: flex-start
+  margin: 60px auto 120px auto
+  gap: 60px
   max-width: 960px
 
   @media screen and (max-width: $break-small)
     +flex-direction(column)
     margin-top: 0
+    margin-bottom: 30px
 
   h1.featured-title
-    margin: 0 0 120px 0
+    margin: 0
     max-width: calc(100% - 360px)
     padding: 0
 
     @media screen and (max-width: $break-small)
-      margin-bottom: 20px
       max-width: 100%
 
 a.shop-now-button
-  height: 75px
-  margin: 0 0 0 auto
+  min-width: 300px
+  margin-left: auto
   position: relative
   text-align: center
   width: auto
@@ -93,8 +101,6 @@ a.shop-now-button
     display: none
 
   @media screen and (max-width: $break-small)
-    height: 50px
-    line-height: 42px
     width: 100%
 
     &.header-button
@@ -103,12 +109,8 @@ a.shop-now-button
     &.footer-button
       display: block
 
-h1.gallery-title
-  text-align: right
-
-  &:after
-    left: auto
-    right: 0
+.gallery-title
+  margin-top: 32px
 
 .image-gallery
   +flexbox

@@ -17,7 +17,13 @@
     {
       "variable": "image_gallery",
       "label": "Home Page Gallery",
-      "description": "Displays image grid on the Home page"
+      "description": "Displays image grid on the Home page",
+      "defaults": [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg"
+      ]
     }
   ],
   "preset_styles": {
@@ -138,7 +144,7 @@
     },
     {
       "variable": "accent_background_color",
-      "label": "Accent Background",
+      "label": "Header & Footer Background",
       "default": "#F9F7F2"
     },
     {
@@ -154,6 +160,12 @@
   ],
   "options": [
     {
+      "variable": "announcement_message_text",
+      "label": "Announcement text",
+      "type": "text",
+      "description": "Displays an announcement message on the top of every page"
+    },
+    {
       "variable": "maintenance_message",
       "label": "Maintenance mode message",
       "type": "text",
@@ -161,10 +173,29 @@
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
     },
     {
+      "variable": "show_search",
+      "label": "Show search",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows the product search area"
+    },
+    {
       "variable": "welcome_header",
       "label": "Welcome header",
       "type": "text",
       "description": "Welcome header for homepage"
+    },
+    {
+      "variable": "welcome_overlay_opacity",
+      "label": "Welcome image overlay opacity",
+      "type": "select",
+      "options": [
+        ["None", "0"],
+        ["25%", ".25"],
+        ["50%", ".5"]
+      ],
+      "default": ".5",
+      "description": "Darken the Home page welcome image. Helps legibility of your welcome header."
     },
     {
       "variable": "gallery_title",
@@ -240,7 +271,7 @@
         ["Stacked 2 column", "two-column"],
         ["Stacked full width", "stacked"]
       ],
-      "default": "carousel",
+      "default": "stacked",
       "description": "Sets the display of the Product page gallery"
     },
     {
@@ -261,6 +292,19 @@
       "default": true,
       "description": "Shows sold out product options in the Product page dropdowns",
       "requires": "inventory"
+    },
+    {
+      "variable": "border_radius",
+      "label": "Rounded corners",
+      "type": "select",
+      "options": [
+        ["Off", "0"],
+        ["Small", "2px"],
+        ["Medium", "4px"],
+        ["Large", "8px"]
+      ],
+      "default": "0",
+      "description": "Controls the rounded corner style on images and other site elements"
     },
     {
       "variable": "instagram_url",

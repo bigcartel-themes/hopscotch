@@ -57,7 +57,7 @@ $('.cart-item-remove').click(function(e) {
   return false;
 });
 
-let animateElements = document.querySelectorAll('.product-card');
+let animateElements = document.querySelectorAll('.animate-in');
 
 let observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -71,5 +71,11 @@ let observer = new IntersectionObserver((entries, observer) => {
 });
 
 animateElements.forEach(element => {
+  // If the element is already visible, add the 'visible' class immediately
+  if (element.getBoundingClientRect().top < window.innerHeight) {
+    element.classList.add('visible');
+  }
+
+  // Then start observing the element
   observer.observe(element);
 });
