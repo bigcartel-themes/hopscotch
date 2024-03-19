@@ -17,13 +17,7 @@
     {
       "variable": "image_gallery",
       "label": "Home Page Gallery",
-      "description": "Displays image grid on the Home page",
-      "defaults": [
-        "1.jpg",
-        "2.jpg",
-        "3.jpg",
-        "4.jpg"
-      ]
+      "description": "Displays image grid on the Home page"
     }
   ],
   "preset_styles": {
@@ -310,7 +304,7 @@
         ["Medium", "4px"],
         ["Large", "8px"]
       ],
-      "default": "0px",
+      "default": "0",
       "description": "Controls the rounded corner style on images and other site elements"
     },
     {
