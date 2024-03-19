@@ -7,6 +7,7 @@
     margin-bottom: 32px
 
 .welcome-image
+  border-radius: var(--border-radius)
   display: block
   width: 100%
 
@@ -24,6 +25,7 @@
   +flexbox
   +align-items(center)
   +animation(welcome-text .6s cubic-bezier(.25,.1,.25,1))
+  border-radius: var(--border-radius)
   bottom: 0
   left: 0
   margin: 120px auto 280px
@@ -51,6 +53,7 @@
 .welcome-image-overlay
   background: var(--welcome-overlay-color)
   opacity: var(--welcome-overlay-opacity)
+  border-radius: var(--border-radius)
   position: absolute
   top: 0
   left: 0
@@ -188,6 +191,7 @@ a.shop-now-button
 
     .gallery-image
       +align-self(center)
+      border-radius: var(--border-radius)
       display: block
       height: auto
       width: 100%

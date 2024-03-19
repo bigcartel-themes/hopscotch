@@ -1,6 +1,6 @@
 {
   "name": "Hopscotch",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "images": [
     {
       "variable": "logo",
@@ -228,6 +228,13 @@
       "description": "The order of products on the Home page"
     },
     {
+      "variable": "all_products_button_text",
+      "label": "All products button text",
+      "type": "text",
+      "description": "Displays alongside featured products, links to your Products page",
+      "default": "View All"
+    },
+    {
       "variable": "products_per_page",
       "label": "Products per page",
       "type": "select",
@@ -303,7 +310,7 @@
         ["Medium", "4px"],
         ["Large", "8px"]
       ],
-      "default": "0",
+      "default": "0px",
       "description": "Controls the rounded corner style on images and other site elements"
     },
     {

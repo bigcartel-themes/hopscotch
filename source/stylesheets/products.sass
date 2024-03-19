@@ -33,6 +33,7 @@
   +flex(1 0 50%)
   +justify-content(flex-end)
   +transition(opacity 1s cubic-bezier(.25,.1,.25,1),transform .5s cubic-bezier(.25,.1,.25,1))
+  border-radius: var(--border-radius)
   max-width: 50%
   opacity: 0
   padding: 60px 15px 90px 15px
@@ -74,6 +75,7 @@
     margin-left: 5px
 
   .product-image-holder
+    border-radius: var(--border-radius)
     position: relative
     left: 0
     width: 100%
@@ -82,6 +84,7 @@
     margin-top: 8px
 
   .product-list-image
+    border-radius: var(--border-radius)
     height: auto
     display: block
     width: 100%
@@ -90,9 +93,10 @@
     width: 100%
 
 .view-details
-  +all-transitions
+  transition: transform .2s ease, opacity .2s ease
   +transform(translateX(-50%) translateY(-50%))
   background-color: var(--text-color)
+  border-radius: var(--border-radius)
   color: var(--background-color)
   font-size: 15px
   left: 50%
@@ -102,7 +106,6 @@
   text-align: center
   top: 50%
   width: 50%
-  visibility: hidden
 
   @media screen and (max-width: $break-medium)
     display: none
@@ -116,68 +119,65 @@ a.product-link
 
   &:hover .view-details
     opacity: 1
-    visibility: visible
-
-.pagination-container
-  +flexbox
-  +align-items(center)
-  +justify-content(flex-start)
-  font-size: 16px
-  margin: 48px auto
-  max-width: 960px
 
 .pagination
-  border: 2px solid var(--text-color)
-  font-size: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  color: var(--text-color)
+  position: relative
+  text-align: center
+  width: 100%
+  gap: 24px
+  line-height: 2em
+  margin-top: 48px
+  transition: color .2s linear
 
-  a:not(.previous):not(.next), .current
-    display: none
-
-a.previous + a.next
-  border-left: 0
-
-.previous, .next
-  +appearance(none)
-  background-color: var(--background-color)
-  border-radius: 0
-  border: 2px solid var(--text-color)
-  display: inline-block
-  font-family: var(--primary-font)
-  font-size: 16px
-  line-height: 67px
-  outline: none
-  padding: 0 65px
+  a:hover
+    color: var(--secondary-text-color)
+    text-decoration: underline
 
   @media screen and (max-width: $break-small)
-    line-height: 42px
-    padding: 0 20px
+    gap: 12px
 
-  &.disabled
+  .page-link
+    display: flex
+    align-items: center
+    gap: 12px
+    padding: 0 8px
+
+    &.disabled
+      display: none
+
+    svg
+      width: 10px
+      height: 16px
+
+  .previous, .next
     display: none
+
+.page-numbers
+  display: flex
+  gap: 16px
+
+  @media screen and (max-width: $break-small)
+    gap: 8px
+
+  .current
+    text-decoration: underline
+
+  > a, span
+    padding: 0 10px
+    text-underline-offset: 2px
 
 .pagination-arrow
-  display: inline-block
-  fill: var(--text-color)
-  height: 16px
-  position: relative
-  top: 2px
-  width: 16px
-
-  @media screen and (max-width: $break-small)
-    margin: 0 !important
+  display: block
+  fill: currentColor
+  height: 17px
+  width: 17px
 
   &.prev-arrow
-    +transform(rotate(90deg))
-    margin-right: 10px
+    margin-right: auto
 
   &.next-arrow
-    +transform(rotate(-90deg))
-    margin-left: 10px
-
-.paginate-info
-  color: var(--secondary-text-color)
-  margin-left: auto
-
-.pagination-link-caption
-  @media screen and (max-width: $break-small)
-    display: none
+    margin-left: auto

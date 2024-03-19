@@ -44,11 +44,14 @@
     &:before
       width: 100%
 
-  .category-nav-heading:hover
-    color: var(--secondary-text-color)
+  .category-nav-heading
+    transition: color .2s linear
 
-    .category-nav-page:before
-      width: 100%
+    &:hover
+      color: var(--secondary-text-color)
+
+      .category-nav-page:before
+        width: 100%
 
   .category-nav-arrow
     width: 12px
@@ -169,4 +172,6 @@
 
   &__icons
     column-gap: 16px
+    position: relative
+    left: -8px
     justify-content: flex-start

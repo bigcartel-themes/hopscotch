@@ -57,25 +57,24 @@ $('.cart-item-remove').click(function(e) {
   return false;
 });
 
-let animateElements = document.querySelectorAll('.animate-in');
+window.onload = function() {
+  let animateElements = document.querySelectorAll('.animate-in');
 
-let observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && entry.intersectionRatio >= 60 / entry.boundingClientRect.height) {
-      entry.target.classList.add('visible');
-    }
+  let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 60 / entry.boundingClientRect.height) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    rootMargin: '0px',
+    threshold: Array.from({length: 100}, (_, i) => i / 100)
   });
-}, {
-  rootMargin: '0px',
-  threshold: Array.from({length: 100}, (_, i) => i / 100) // Array of thresholds from 0.0 to 1.0
-});
 
-animateElements.forEach(element => {
-  // If the element is already visible, add the 'visible' class immediately
-  if (element.getBoundingClientRect().top < window.innerHeight) {
-    element.classList.add('visible');
-  }
-
-  // Then start observing the element
-  observer.observe(element);
-});
+  animateElements.forEach(element => {
+    if (element.getBoundingClientRect().top < window.innerHeight) {
+      element.classList.add('visible');
+    }
+    observer.observe(element);
+  });
+}
