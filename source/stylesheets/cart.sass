@@ -1,158 +1,194 @@
-@import 'variables'
-
-.cart-items
-  list-style: none
-  margin: 0
-  padding: 0
-
-.cart-item
-  +flexbox
-  +align-items(center)
-  font-size: 20px
-  line-height: 25px
-  margin-bottom: 50px
-
-  @media screen and (max-width: $break-medium)
-    font-size: 16px
-
-  @media screen and (max-width: $break-small)
-    +flex-wrap(wrap)
-
-  &:last-child
-    margin-bottom: 0
-
-.cart-item-image
-  background-position: 50% 50%
-  background-size: cover
-  display: block
-  height: 127px
-  margin-right: 77px
-  width: 192px
-
-  @media screen and (max-width: $break-small)
-    +flex-basis(30%)
-    height: 120px
-    margin-right: 0
-    width: 120px
-
-.cart-item-details
-  max-width: 300px
+.cart-empty
+  display: flex
+  flex-direction: column
+  gap: 16px
+  margin: 0 auto
   width: 100%
 
-  @media screen and (max-width: $break-small)
-    +flex-basis(80%)
-    order: 4
-    padding-top: 10px
+.cart-columns
+  display: grid
+  align-items: flex-start
+  grid-template-columns: 1fr
+  column-gap: 64px
 
-.cart-item-details-option
-  color: $secondary-text-color
-  font-size: 16px
+  @media screen and (max-width: $break-large)
+    grid-template-columns: 1fr
 
-.cart-item-details-price
-  padding-left: 100px
-  text-align: left
-  width: 200px
+.cart-header
+  display: flex
+  align-items: flex-end
+  justify-content: flex-start
+  margin-bottom: 32px
 
-  @media screen and (max-width: $break-small)
-    +align-self(baseline)
-    +flex-basis(20%)
-    margin-left: auto
-    order: 6
-    padding-left: 0
-    padding-top: 10px
-    text-align: right
+  .page-title
+    margin-bottom: 0
 
-.cart-item-quantity-holder
-  margin-left: auto
+.cart-items
+  border-bottom: 2px solid var(--text-color)
 
-  @media screen and (max-width: $break-small)
-    +flex-basis(70%)
-    text-align: right
+.cart-item
+  display: grid
+  grid-template-columns: auto 1fr 148px auto
+  justify-content: flex-start
+  align-items: flex-start
+  border-top: 2px solid var(--text-color)
+  padding: 24px 0
+  gap: 16px
+
+  @media (max-width: $break-large)
+    grid-template-columns: auto 1fr auto
+    grid-template-rows: repeat(2, auto)
+
+  .cart-item-image-holder
+    @media screen and (max-width: $break-large)
+      grid-area: 1 / 1 / 3 / 2
+
+  .cart-item-image-link
+    display: block
+    height: 90px
+    overflow: hidden
+    width: 90px
+
+    @media screen and (max-width: $break-large)
+      height: 64px
+      width: 64px
+
+    img
+      border-radius: var(--border-radius)
+      height: 100%
+      object-fit: cover
+      width: 100%
+
+  .cart-item-detail
+    padding-right: 24px
+
+    @media (max-width: $break-large)
+      grid-area: 1 / 2 / 2 / 3
+      padding-right: 0
+
+  .product-name
+    font-size: 1.2em
+    word-break: break-word
+
+  .option-name
+    font-size: 1em
+    margin-top: 4px
 
   input
-    +all-transitions
-    background: none
     border: none
-    border-bottom: 4px solid $secondary-text-color
-    padding: 8px 0
+    height: 100%
+    padding: 8px
     text-align: center
-    width: 56px
+    width: 48px
 
-    &:active, &:focus
-      border-color: $text-color
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+      display: none
 
-.cart-item-remove
-  text-align: right
-  width: 100px
+  .cart-qty
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    width: 148px
+    gap: 8px
 
-  @media screen and (max-width: $break-small)
-    display: none
+    @media (max-width: $break-large)
+      align-items: center
+      grid-area: 2 / 2 / 3 / 4
+      justify-content: flex-start
+      flex-direction: row
+      width: 100%
+      gap: 24px
 
-  .cart-remove-icon
-    +all-transitions
-    cursor: pointer
-    fill: $theme-color
+  .qty-holder
+    display: flex
+    align-items: center
+    border: 2px solid var(--text-color)
+    border-radius: var(--border-radius)
+    gap: 8px
 
-  &:hover .cart-remove-icon
-    fill: $text-color
+    &.disabled
+      > *
+        opacity: .7
+        cursor: not-allowed
+        user-select: none
+        pointer-events: none
+
+  .qty-button
+    display: flex
+    align-items: center
+    justify-content: center
+    border: none
+    height: 44px
+    width: 36px
+
+    &:hover
+      color: var(--link-hover-color)
+
+    svg
+      width: 14px
+      height: 16px
+
+  .cart-remove-item--link
+    display: inline-block
+    height: auto
+    min-height: 0
+    padding: .5em
+    line-height: 1em
+    font-weight: normal
+    font-size: .925em
+    padding: 8px 16px
+    text-decoration: underline
+    width: auto
+
+    @media (max-width: $break-large)
+      padding: 4px 0
+      margin-left: auto
+
+  .cart-item-price
+    font-size: 1.1em
+    margin-left: auto
+    min-width: 100px
+    min-height: 42px
+    display: flex
+    justify-content: flex-end
+    text-align: right
+
+    @media screen and (max-width: $break-large)
+      font-size: 1.2rem
+      min-height: 0
+      min-width: 0
+      grid-area: 1 / 3 / 2 / 4
+      margin-left: 0
 
 .cart-footer
-  +flexbox
-  +align-items(center)
-  +justify-content(flex-end)
-  margin-top: 75px
+  display: grid
+  place-items: center
+  gap: 2rem
+  margin-top: 24px
+  margin-left: auto
+  width: 100%
+  max-width: 300px
 
   @media screen and (max-width: $break-small)
-    +flex-direction(column)
+    max-width: 100%
 
 .cart-subtotal
-  padding-left: 100px
-  width: 300px
+  display: flex
+  gap: 16px
+  font-size: 1.5rem
+  align-items: flex-start
+  width: 100%
 
-  @media screen and (max-width: $break-small)
-    margin-bottom: 50px
-    order: 1
-    padding: 0
-    text-align: right
-    width: 100%
+  &__amount
+    margin-left: auto
 
-.cart-subtotal-label
-  display: none
+.cart-submit
+  display: flex
+  flex-direction: column
+  gap: 8px
+  width: 100%
 
-  @media screen and (max-width: $break-small)
-    display: inline-block
-
-.checkout-btn
-  margin-left: 60px
-
-  @media screen and (max-width: $break-small)
-    margin: 0
-    order: 2
-    width: 100%
-
-a.continue-shopping
-  +all-transitions
-  background-color: transparent
-  border-color: transparent
-  color: $secondary-text-color
-  padding: 0
-  white-space: nowrap
-
-  &:hover, &:focus
-    border-color: transparent
-    color: $text-color
-
-  @media screen and (max-width: $break-small)
-    margin-top: 8px
-    order: 3
-
-a.start-shopping
-  display: inline-block
-  float: right
-  margin-right: 60px
-
-  @media screen and (max-width: $break-small)
-    float: none
-    margin: 0
-    text-align: center
+  .button
+    max-width: 100%
     width: 100%

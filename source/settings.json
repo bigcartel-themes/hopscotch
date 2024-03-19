@@ -1,6 +1,6 @@
 {
   "name": "Hopscotch",
-  "version": "1.5.1",
+  "version": "1.5.6",
   "images": [
     {
       "variable": "logo",
@@ -138,7 +138,7 @@
     },
     {
       "variable": "accent_background_color",
-      "label": "Accent Background",
+      "label": "Header & Footer Background",
       "default": "#F9F7F2"
     },
     {
@@ -154,6 +154,12 @@
   ],
   "options": [
     {
+      "variable": "announcement_message_text",
+      "label": "Announcement text",
+      "type": "text",
+      "description": "Displays an announcement message on the top of every page"
+    },
+    {
       "variable": "maintenance_message",
       "label": "Maintenance mode message",
       "type": "text",
@@ -161,10 +167,29 @@
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
     },
     {
+      "variable": "show_search",
+      "label": "Show search",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows the product search area"
+    },
+    {
       "variable": "welcome_header",
       "label": "Welcome header",
       "type": "text",
       "description": "Welcome header for homepage"
+    },
+    {
+      "variable": "welcome_overlay_opacity",
+      "label": "Welcome image overlay opacity",
+      "type": "select",
+      "options": [
+        ["None", "0"],
+        ["25%", ".25"],
+        ["50%", ".5"]
+      ],
+      "default": ".5",
+      "description": "Darken the Home page welcome image. Helps legibility of your welcome header."
     },
     {
       "variable": "gallery_title",
@@ -197,20 +222,19 @@
       "description": "The order of products on the Home page"
     },
     {
+      "variable": "all_products_button_text",
+      "label": "All products button text",
+      "type": "text",
+      "description": "Displays alongside featured products, links to your Products page",
+      "default": "View All"
+    },
+    {
       "variable": "products_per_page",
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 36,
+      "default": 48,
       "description": "The number of products displayed per page"
-    },
-    {
-      "variable": "product_thumbnail_caption_display",
-      "label": "Product Thumbnail Text",
-      "type": "select",
-      "options": ["Vertical", "Horizontal"],
-      "default": "Horizontal",
-      "description": "Determines orientation for product thumbnail text"
     },
     {
       "variable": "nav_items",
@@ -232,12 +256,56 @@
       "description": "Sets the display of prices in your shop"
     },
     {
+      "variable": "product_image_zoom",
+      "label": "Enable product image zoom",
+      "type": "boolean",
+      "default": true,
+      "description": "Click to open a larger version of the Product page image"
+    },
+    {
+      "variable": "desktop_product_page_images",
+      "label": "Desktop product page images",
+      "type": "select",
+      "options": [
+        ["Thumbnails", "thumbnails"],
+        ["Carousel", "carousel"],
+        ["Stacked 2 column", "two-column"],
+        ["Stacked full width", "stacked"]
+      ],
+      "default": "stacked",
+      "description": "Sets the display of the Product page gallery"
+    },
+    {
+      "variable": "mobile_product_page_images",
+      "label": "Mobile product page image carousel",
+      "type": "select",
+      "options": [
+        ["Show thumbnails", "show-thumbnails"],
+        ["Hide thumbnails", "hide-thumbnails"]
+      ],
+      "default": "show-thumbnails",
+      "description": "Choose to hide or show thumbnails on the mobile Product page carousel"
+    },
+    {
       "variable": "show_sold_out_product_options",
       "label": "Show sold out product options",
       "type": "boolean",
       "default": true,
       "description": "Shows sold out product options in the Product page dropdowns",
       "requires": "inventory"
+    },
+    {
+      "variable": "border_radius",
+      "label": "Rounded corners",
+      "type": "select",
+      "options": [
+        ["Off", "0"],
+        ["Small", "2px"],
+        ["Medium", "4px"],
+        ["Large", "8px"]
+      ],
+      "default": "0",
+      "description": "Controls the rounded corner style on images and other site elements"
     },
     {
       "variable": "instagram_url",

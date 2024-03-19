@@ -1,10 +1,9 @@
+<h1 class="page-title">{{ page.name }}</h1>
 {% if contact.sent %}
-  <h1 class="page-title">Your message has been sent and we'll get back to you soon!</h1>
   <div class="contact-form-block contact-send">
-    <a class="back-to-shop-button button" href="/">Back to Shop</a>
+    <p>Your message has been sent and we'll get back to you soon!</p>
   </div>
 {% else %}
-  <h1 class="page-title">{{ page.name }}</h1>
   <div class="page-content {{ page.category }}-content">
     <form method="post" action="/contact" class="contact-form">
       {% if errors != blank %}
@@ -40,11 +39,11 @@
           {{ contact | contact_input: 'message' }}
         </div>
       </div>
+      <div class="contact-form-block contact-send">
+        <button class="send-message-button button" type="submit" name="submit">Send message</button>
+      </div>
       <div class="contact-form-block contact-recaptcha">
         <div class="recaptcha-note">{{ contact.recaptcha }}</div>
-      </div>
-      <div class="contact-form-block contact-send">
-        <button class="send-message-button button" type="submit" name="submit" title="Send message" tabindex="6">Send message</button>
       </div>
     </form>
   </div>

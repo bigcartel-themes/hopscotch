@@ -1,44 +1,29 @@
-@import 'flexbox'
+\:root
+  --theme-color: #{"{{ theme.theme_color }}"}
+  --background-color: #{"{{ theme.background_color }}"}
+  --text-color: #{"{{ theme.text_color }}"}
+  --secondary-text-color: #{"{{ theme.secondary_text_color }}"}
+  --accent-background-color: #{"{{ theme.accent_background_color }}"}
 
-$theme-color: #{"{{ theme.theme_color }}"}
-$background-color: #{"{{ theme.background_color }}"}
-$text-color: #{"{{ theme.text_color }}"}
-$secondary-text-color: #{"{{ theme.secondary_text_color }}"}
-$accent-background-color: #{"{{ theme.accent_background_color }}"}
+  --welcome-overlay-color: #000000
 
-$error-text-color: #FFFFFF
-$error-background-color: #9D0B1C
+  --border-color: #{"rgba(var(--text-color-rgb),.5)"}
 
-$primary-font: #{"{{ theme.primary_font | font_family }}"}
+  --button-text-color: var(--text-color)
+  --button-background-color: var(--background-color)
+
+  --announcement-background-color: var(--background-color)
+  --announcement-text-color: var(--text-color)
+
+  --error-text-color: #FFFFFF
+  --error-background-color: #9D0B1C
+
+  --primary-font: #{"{{ theme.primary_font | font_family }}"}
+
+  --border-radius: #{"{{ theme.border_radius }}"}
+  --welcome-overlay-opacity: #{"{{ theme.welcome_overlay_opacity }}"}
 
 $break-large: 1200px
 $break-medium: 1023px
 $break-small: 767px
 $break-extra-small: 640px
-
-@mixin all-transitions
-  +transition(.2s linear)
-
-@mixin transition($transition...)
-  -webkit-transition: #{$transition}
-  transition: #{$transition}
-
-@mixin transform($str...)
-  -webkit-transform: $str
-  transform: $str
-
-@mixin appearance($str)
-  -webkit-appearance: none
-  -moz-appearance: none
-  appearance: none
-
-@mixin keyframes($animation)
-  @-webkit-keyframes #{$animation}
-    @content
-
-  @keyframes #{$animation}
-    @content
-
-@mixin animation($str...)
-  -webkit-animation: $str
-  animation: $str
