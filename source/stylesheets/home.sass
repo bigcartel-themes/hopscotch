@@ -116,78 +116,71 @@ a.shop-now-button
   margin-top: 32px
 
 .image-gallery
-  +flexbox
-  +flex-direction(row)
-  +flex-wrap(wrap)
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 60px
   max-width: 960px
   margin: 0 auto
-  padding: 30px 50px
+  padding: 60px 50px
   position: relative
   width: 100%
 
+  @media screen and (max-width: $break-medium)
+    gap: 30px
+
   @media screen and (max-width: $break-small)
-    padding: 20px 0
+    grid-template-columns: repeat(2, 1fr)
+    padding: 10px 0
+    gap: 16px
+    width: 90%
 
   .gallery-image-container
-    +flexbox
-    +flex(1 0 33%)
-    +justify-content(flex-end)
-    +transition(opacity 1s cubic-bezier(.25,.1,.25,1),transform .5s cubic-bezier(.25,.1,.25,1))
-    max-width: 33%
-    opacity: 0
-    padding: 5% 5px calc(30px + 4%) 5px
     position: relative
-    width: 100%
+    margin-bottom: 60px
+    +transition(opacity 1s cubic-bezier(.25,.1,.25,1),transform .5s cubic-bezier(.25,.1,.25,1))
+    opacity: 0
 
-    &:nth-child(6n+1)
-      left: -30px
+    @media screen and (max-width: $break-small)
+      margin-bottom: 0
+      top: 0 !important
+
+    &.visible
+      transform: translate(0,-20px)
+      opacity: 1
+      visibility: visible
+
+    &:nth-child(6n+1),
       top: -30px
-
-      @media screen and (max-width: $break-medium)
-        left: 0
-        top: 0
+      left: -30px
 
     &:nth-child(6n+2)
+      top: 30px
       left: -30px
-      top: 0
-
-      @media screen and (max-width: $break-medium)
-        left: 0
-        top: 0
 
     &:nth-child(6n+3)
-      right: -30px
       top: -30px
-
-      @media screen and (max-width: $break-medium)
-        left: -60px
-        top: 0
+      left: -30px
 
     &:nth-child(6n+4)
       top: 30px
+      left: 30px
 
-      @media screen and (max-width: $break-medium)
-        left: -60px
-        top: 0
+    &:nth-child(6n+5)
+      top: -30px
+      left: 30px
 
-    @media screen and (max-width: $break-medium)
-      +flex(1 0 50%)
-      max-width: 50%
-      padding-top: 3%
+    &:nth-child(6n+6)
+      top: 30px
+      left: 30px
 
-    @media screen and (max-width: $break-small)
-      +flex(1 0 100%)
-      left: auto !important
-      max-width: 100% !important
-      padding: 10px 0
-      right: auto !important
-      top: 0 !important
+    &:nth-child(4n+1), &:nth-child(4n+2)
+      @media screen and (max-width: $break-small)
+        left: -10%
 
-      &:nth-child(odd)
-        padding-left: 20px
-
-      &:nth-child(even)
-        padding-right: 20px
+    &:nth-child(4n+3), &:nth-child(4n+4)
+      @media screen and (max-width: $break-small)
+        right: -10%
+        left: auto
 
     .gallery-image
       +align-self(center)
@@ -195,8 +188,3 @@ a.shop-now-button
       display: block
       height: auto
       width: 100%
-
-    &.visible
-      transform: translate(0,-20px)
-      opacity: 1
-      visibility: visible
