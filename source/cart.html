@@ -9,9 +9,14 @@
   {% endif %}
   {% if cart.items == blank %}
     <div class="cart-empty">
-      <a href="/products" class="button">Shop now</a>
+      <a href="/" class="button">Shop now</a>
     </div>
   {% else %}
+    {% if cart.shareable_link %}
+    <div class="cart-header">
+      <a href="{{ cart.shareable_link }}" class="button button--minimal copy-cart-link" data-clipboard-text="{{ cart.shareable_link }}">Share this cart</a>
+    </div>
+    {% endif %}
     <form method="post" id="cart_form" class="cart-form" action="/cart" accept-charset="utf8">
       <div class="cart-columns">
         <div class="cart-details">
@@ -63,7 +68,7 @@
           </div>
           <div class="cart-submit">
             <button type="submit" name="checkout" class="button button--checkout">Checkout</button>
-            <a class="button button--minimal" href="/products">Continue Shopping</a>
+            <a class="button button--minimal" href="/">Continue Shopping</a>
           </div>
         </div>
       </div>
