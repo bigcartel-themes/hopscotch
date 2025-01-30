@@ -263,7 +263,10 @@
       "type": "select",
       "options": "product_orders",
       "default": "position",
-      "description": "The order of products on the Home page"
+      "description": "The order of products on the Home page",
+      "requires": [
+        "featured_products gt 0"
+      ]
     },
     {
       "variable": "all_products_button_text",
@@ -277,7 +280,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 48,
+      "default": 24,
       "description": "The number of products displayed per page"
     },
     {
@@ -404,6 +407,24 @@
       "label": "YouTube URL",
       "type": "text",
       "description": "Ex: https://youtube.com/@BigCartelDotCom"
+    },
+    {
+      "variable": "spotify_url",
+      "label": "Spotify URL",
+      "type": "text",
+      "description": "Ex: https://open.spotify.com/artist/0gxy..."
+    },
+    {
+      "variable": "linkedin_url",
+      "label": "LinkedIn URL",
+      "type": "text",
+      "description": "Ex: https://linkedin.com/in/bigcartel"
+    },
+    {
+      "variable": "twitch_url",
+      "label": "Twitch URL",
+      "type": "text",
+      "description": "Ex: https://twitch.tv/username"
     },
     {
       "variable": "tumblr_url",
