@@ -115,6 +115,50 @@
             }
           }
         ]
+      },
+      {
+        "group_name": "Playful",
+        "styles": [
+          {
+            "style_name": "Playful #1",
+            "fonts": {
+              "primary_font": "Concert One"
+            },
+            "colors": {
+              "theme_color": "#FF3366",
+              "background_color": "#FFFFFF",
+              "accent_background_color": "#FFF0F5",
+              "text_color": "#222222",
+              "secondary_text_color": "#FF3366"
+            }
+          },
+          {
+            "style_name": "Playful #2",
+            "fonts": {
+              "primary_font": "Chewy"
+            },
+            "colors": {
+              "theme_color": "#00C6B6",
+              "background_color": "#FFFDE7",
+              "accent_background_color": "#E0F7F6",
+              "text_color": "#1A5F7A",
+              "secondary_text_color": "#00968A"
+            }
+          },
+          {
+            "style_name": "Playful #3",
+            "fonts": {
+              "primary_font": "Sour Gummy"
+            },
+            "colors": {
+              "theme_color": "#9D4EDD",
+              "background_color": "#FFE5F9",
+              "accent_background_color": "#F0E6FF",
+              "text_color": "#2D0C57",
+              "secondary_text_color": "#7B2CBF"
+            }
+          }
+        ]
       }
     ]
   },
